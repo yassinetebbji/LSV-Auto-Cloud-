@@ -6,451 +6,252 @@
     <title>LSV Auto Cloud | Modern Dealer Websites & Lead Tracking</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy-900: #0b1a2c;
-            --navy-800: #12263c;
-            --navy-700: #1c3452;
-            --orange-500: #ff6b35;
-            --orange-400: #ff8c5a;
-            --slate-100: #e6eaf0;
-            --slate-300: #cdd6e0;
-            --white: #ffffff;
-            --gradient: radial-gradient(circle at 20% 20%, rgba(255, 107, 53, 0.2), transparent 35%),
-                        radial-gradient(circle at 80% 0%, rgba(255, 140, 90, 0.18), transparent 35%),
-                        linear-gradient(135deg, #0b1a2c 0%, #0f2337 50%, #0b1a2c 100%);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--navy-900);
-            color: var(--slate-100);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            backdrop-filter: blur(10px);
-            background: rgba(11, 26, 44, 0.9);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .nav {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 18px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-        }
-
-        .brand-mark {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, var(--orange-500), var(--orange-400));
-            display: grid;
-            place-items: center;
-            font-weight: 800;
-            color: var(--navy-900);
-            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 18px;
-            font-weight: 500;
-            font-size: 14px;
-        }
-
-        .nav-links a {
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: background 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.06);
-        }
-
-        main {
-            background: var(--gradient);
-        }
-
-        section {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 80px 24px;
-        }
-
-        .hero {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            align-items: center;
-            gap: 40px;
-            padding-top: 60px;
-            padding-bottom: 60px;
-        }
-
-        .hero h1 {
-            font-size: clamp(32px, 5vw, 46px);
-            margin: 0 0 18px;
-            line-height: 1.15;
-            letter-spacing: -0.5px;
-        }
-
-        .hero p.lead {
-            font-size: 18px;
-            color: var(--slate-100);
-            margin-bottom: 26px;
-            max-width: 640px;
-        }
-
-        .badge-row {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 18px;
-        }
-
-        .badge {
-            padding: 8px 12px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            font-size: 13px;
-            color: var(--slate-100);
-        }
-
-        .cta-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-top: 6px;
-        }
-
-        .btn {
-            padding: 14px 18px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 15px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--orange-500), var(--orange-400));
-            color: var(--navy-900);
-            box-shadow: 0 12px 25px rgba(255, 107, 53, 0.35);
-        }
-
-        .btn-primary:hover { transform: translateY(-1px); }
-
-        .btn-secondary {
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            color: var(--slate-100);
-            background: rgba(255, 255, 255, 0.04);
-        }
-
-        .btn-secondary:hover { transform: translateY(-1px); }
-
-        .hero-visual {
-            position: relative;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(255, 255, 255, 0.03));
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 18px;
-            padding: 28px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-            min-height: 320px;
-            display: grid;
-            place-items: center;
-            overflow: hidden;
-        }
-
-        .hero-visual::after {
-            content: "";
-            position: absolute;
-            inset: 20px;
-            border-radius: 14px;
-            border: 1px dashed rgba(255, 255, 255, 0.12);
-        }
-
-        .hero-visual span {
-            z-index: 1;
-            color: var(--slate-300);
-            font-weight: 600;
-            letter-spacing: 0.6px;
-            text-transform: uppercase;
-        }
-
-        .section-header {
-            max-width: 720px;
-            margin-bottom: 42px;
-        }
-
-        .section-header h2 {
-            margin: 0 0 10px;
-            font-size: clamp(26px, 4vw, 34px);
-            letter-spacing: -0.2px;
-        }
-
-        .section-header p {
-            margin: 0;
-            color: var(--slate-300);
-        }
-
-        .pill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 18px;
-        }
-
-        .pill {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 14px;
-            padding: 18px;
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-        }
-
-        .pill .icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 12px;
-            background: rgba(255, 107, 53, 0.15);
-            color: var(--orange-400);
-            display: grid;
-            place-items: center;
-            font-weight: 700;
-        }
-
-        .pill h3 {
-            margin: 0 0 6px;
-            font-size: 18px;
-        }
-
-        .pill p {
-            margin: 0;
-            color: var(--slate-300);
-            font-size: 14px;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 20% 20%, rgba(255, 107, 53, 0.18), transparent 35%);
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        .card h3 {
-            margin: 0 0 8px;
-            font-size: 18px;
-        }
-
-        .card p {
-            margin: 0;
-            color: var(--slate-300);
-            font-size: 14px;
-        }
-
-        .list {
-            display: grid;
-            gap: 12px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .list li {
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-            color: var(--slate-100);
-        }
-
-        .list li span {
-            color: var(--orange-400);
-            font-weight: 700;
-        }
-
-        .about {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            align-items: center;
-        }
-
-        .about .panel {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 20px;
-            color: var(--slate-100);
-        }
-
-        .contact-form {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 18px;
-            padding: 20px;
-            max-width: 540px;
-        }
-
-        .contact-form form {
-            display: grid;
-            gap: 12px;
-        }
-
-        .contact-form label {
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            background: rgba(255, 255, 255, 0.03);
-            color: var(--slate-100);
-            font-family: inherit;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: 2px solid rgba(255, 107, 53, 0.7);
-        }
-
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 22px 24px;
-            text-align: center;
-            color: var(--slate-300);
-            background: rgba(0, 0, 0, 0.25);
-        }
-
-        @media (max-width: 640px) {
-            .nav { padding: 16px; }
-            .nav-links { display: none; }
-            section { padding: 60px 16px; }
-            .hero { padding-top: 30px; padding-bottom: 30px; }
-            .hero h1 { font-size: 32px; }
-            .cta-group { width: 100%; }
-            .btn { justify-content: center; flex: 1; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
-<body>
+<body id="top">
     <header>
-        <div class="nav">
-            <a class="brand" href="#top">
-                <div class="brand-mark">A</div>
+        <div class="container nav">
+            <a class="brand" href="#top" aria-label="LSV Auto Cloud">
+                <div class="brand-mark">LSV</div>
                 <div>LSV Auto Cloud</div>
             </a>
             <div class="nav-links">
                 <a href="#how">How it works</a>
-                <a href="#demo">Product demo</a>
-                <a href="#use-cases">Use cases</a>
-                <a href="#about">About</a>
+                <a href="#services">Product suite</a>
+                <a href="#proof">Proof</a>
+                <a href="#demo">Book a demo</a>
                 <a href="#contact">Contact</a>
+                <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
             </div>
         </div>
     </header>
 
-    <main id="top">
+    <div class="floating-cta" aria-label="Quick actions">
+        <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+        <a class="btn btn-secondary" href="#benefits">See Features</a>
+    </div>
+
+    <div class="mobile-cta">
+        <div class="bar">
+            <div class="bar-copy">
+                <div class="bar-title">Ready to see it?</div>
+                <div class="bar-subtitle">Book a live walkthrough.</div>
+            </div>
+            <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+        </div>
+    </div>
+
+    <main class="container">
         <section class="hero" id="hero">
             <div>
-                <div class="badge-row">
-                    <span class="badge">Dealer sites in days</span>
-                    <span class="badge">CRM-light for leads</span>
-                </div>
+                <div class="eyebrow">Dealer sites in days · CRM-light for leads</div>
                 <h1>Modern dealer website + simple lead tracking.</h1>
                 <p class="lead">LSV Auto Cloud gives independent car dealers a fast website and a mini CRM so no website lead is ever lost.</p>
-                <div class="cta-group">
-                    <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a live demo</a>
-                    <a class="btn btn-secondary" href="https://demo.lsvautocloud.com" target="_blank" rel="noopener">View dealer demo site</a>
+                <div class="metrics">
+                    <div class="metric">
+                        <strong>10 min</strong>
+                        <span>Average page load to first lead capture</span>
+                    </div>
+                    <div class="metric">
+                        <strong>+42%</strong>
+                        <span>Lift in web-to-call conversion</span>
+                    </div>
+                    <div class="metric">
+                        <strong>24/7</strong>
+                        <span>Lead routing + reminders built-in</span>
+                    </div>
                 </div>
-                <ul class="list" style="margin-top:18px;">
+                <div class="badge-row">
+                    <span class="badge"><span class="icon-bubble">⚡</span>Mobile-first inventory pages</span>
+                    <span class="badge"><span class="icon-bubble mint">☎</span>Financing + click-to-call CTAs</span>
+                    <span class="badge"><span class="icon-bubble">✓</span>Assign + follow every lead</span>
+                </div>
+                <div class="cta-group">
+                    <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+                    <a class="btn btn-secondary" href="#benefits">See Features</a>
+                    <a class="btn btn-secondary" href="https://demo.lsvautocloud.com" target="_blank" rel="noopener">View Examples</a>
+                </div>
+                <ul class="hero-list">
                     <li><span>•</span> Lightning-fast pages with inventory highlights and financing CTAs.</li>
                     <li><span>•</span> Assign every inquiry to a salesperson with reminders and notes.</li>
                     <li><span>•</span> Built to look great on mobile so shoppers keep browsing.</li>
                 </ul>
             </div>
             <div class="hero-visual" aria-hidden="true">
-                <span>Dealer site preview placeholder</span>
+                <div class="preview-stack">
+                    <div class="preview-card">
+                        <h4>Dealer site preview</h4>
+                        <div class="preview-grid">
+                            <div class="preview-cta"><span>Featured SUV</span></div>
+                            <div class="preview-list">
+                                <strong>Financing CTA</strong>
+                                <small>Click-to-call + credit prequal</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-card">
+                        <h4>Lead inbox</h4>
+                        <div class="preview-grid">
+                            <div class="preview-list">
+                                <strong>Owner</strong>
+                                <small>Assigned to Alex · Due today</small>
+                            </div>
+                            <div class="preview-cta"><span>Follow-up</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trust" aria-label="Trusted by dealers">
+            <div class="trust-note">Trusted by independent dealers launching fast, premium websites.</div>
+            <div class="trust-bar">
+                <div class="logo-chip">Metro Auto Group</div>
+                <div class="logo-chip">Hillside Motors</div>
+                <div class="logo-chip">DriveNow Imports</div>
+                <div class="logo-chip">Sunrise Auto</div>
+                <div class="logo-chip">Northshore Trucks</div>
             </div>
         </section>
 
         <section id="how">
             <div class="section-header">
-                <h2>How it works</h2>
-                <p>Launch a polished dealer site and stay on top of every website lead with a workflow that fits independent teams.</p>
+                <div class="eyebrow">How it works</div>
+                <h2>Launch a polished dealer site and stay on top of every website lead.</h2>
+                <p>From kickoff to live site and follow-up workflow, we keep the process lightweight so you see value in days—not months.</p>
             </div>
             <div class="pill-grid">
                 <div class="pill">
                     <div class="icon">1</div>
                     <div>
-                        <h3>Launch your site</h3>
+                        <h3><span class="icon-bubble">🚀</span>Launch your site</h3>
                         <p>We set up your dealer website with branded colors, featured vehicles, and financing CTAs in days—not months.</p>
                     </div>
                 </div>
                 <div class="pill">
                     <div class="icon">2</div>
                     <div>
-                        <h3>Capture every lead</h3>
+                        <h3><span class="icon-bubble mint">🎯</span>Capture every lead</h3>
                         <p>Forms and click-to-call buttons feed directly into your mini CRM so every inquiry is assigned and acknowledged.</p>
                     </div>
                 </div>
                 <div class="pill">
                     <div class="icon">3</div>
                     <div>
-                        <h3>Work the follow-up</h3>
+                        <h3><span class="icon-bubble">📅</span>Work the follow-up</h3>
                         <p>See status, notes, and reminders for each shopper. The simple queue keeps the team focused on the next call or text.</p>
+                    </div>
+                </div>
+                <div class="pill">
+                    <div class="icon">4</div>
+                    <div>
+                        <h3><span class="icon-bubble mint">📈</span>Optimize and grow</h3>
+                        <p>Analytics highlight top pages and campaigns so you can double down on what brings buyers in.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+                <a class="btn btn-secondary" href="#services">See Features</a>
+            </div>
+        </section>
+
+        <section id="benefits">
+            <div class="section-header">
+                <div class="eyebrow">Why dealers pick us</div>
+                <h2>Built for independents who need premium design and a reliable lead workflow.</h2>
+                <p>Everything is tuned for mobile shoppers, fast response times, and clear accountability for follow-up.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="card-icon">⚡</div>
+                    <h3>Fast, premium pages</h3>
+                    <p>Lightning-fast pages with inventory highlights and financing CTAs that feel bespoke to your brand.</p>
+                </div>
+                <div class="feature">
+                    <div class="card-icon">🗂</div>
+                    <h3>CRM-light simplicity</h3>
+                    <p>Assign every inquiry, add notes, and set reminders without the bloat of enterprise CRMs.</p>
+                </div>
+                <div class="feature">
+                    <div class="card-icon">📱</div>
+                    <h3>Mobile-first everything</h3>
+                    <p>Layouts, buttons, and lead forms are built for thumbs so shoppers keep browsing and converting.</p>
+                </div>
+                <div class="feature">
+                    <div class="card-icon">☎</div>
+                    <h3>Financing + click-to-call</h3>
+                    <p>Persistent CTAs that route directly to your team with clear ownership for every conversation.</p>
+                </div>
+                <div class="feature">
+                    <div class="card-icon">📊</div>
+                    <h3>Analytics that matter</h3>
+                    <p>See top-performing vehicles, pages, and sources so you can double down on winning campaigns.</p>
+                </div>
+                <div class="feature">
+                    <div class="card-icon">🤝</div>
+                    <h3>Support from dealership pros</h3>
+                    <p>Set up and iterate with people who know how independent dealers work day to day.</p>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+                <a class="btn btn-secondary" href="#pricing">See Packages</a>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="section-header">
+                <div class="eyebrow">Product suite</div>
+                <h2>All-in-one: personalized dealer site, integrated lead inbox, and AI tools.</h2>
+                <p>Everything works together so your site looks premium and every shopper gets a follow-up.</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="card-icon">🖥</div>
+                    <h3>Personalized dealer website</h3>
+                    <p>Homepage hero with featured vehicles, financing callouts, and prominent click-to-call for shoppers on mobile.</p>
+                    <ul class="list">
+                        <li><span>•</span> Launch-ready site with branded colors and inventory highlights.</li>
+                        <li><span>•</span> Mobile-first galleries with fast load times.</li>
+                        <li><span>•</span> Financing + trade-in CTAs on every key page.</li>
+                    </ul>
+                    <div class="placeholder">Website preview placeholder</div>
+                    <div class="section-cta">
+                        <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+                        <a class="btn btn-secondary" href="https://demo.lsvautocloud.com" target="_blank" rel="noopener">View Examples</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">📇</div>
+                    <h3>CRM integration</h3>
+                    <p>Unified list of web leads with owner, status, and due dates. Open a lead to log calls, texts, and next steps.</p>
+                    <ul class="list">
+                        <li><span>•</span> Auto-assign rules + reminders so no inquiry is missed.</li>
+                        <li><span>•</span> Notes, next actions, and call outcomes in one view.</li>
+                        <li><span>•</span> Simple analytics for accountability and coaching.</li>
+                    </ul>
+                    <div class="placeholder">Lead inbox screenshot placeholder</div>
+                    <div class="section-cta">
+                        <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Get a Free Demo</a>
+                        <a class="btn btn-secondary" href="#how">See Features</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">✨</div>
+                    <h3>AI tools</h3>
+                    <p>AI-powered copy and follow-up nudges to keep the team moving quickly on every conversation.</p>
+                    <ul class="list">
+                        <li><span>•</span> Auto-drafted responses tuned to your inventory.</li>
+                        <li><span>•</span> Smart reminders for stale leads and high-intent shoppers.</li>
+                        <li><span>•</span> Copy suggestions for campaigns and vehicle highlights.</li>
+                    </ul>
+                    <div class="placeholder">AI assistant preview placeholder</div>
+                    <div class="section-cta">
+                        <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+                        <a class="btn btn-secondary" href="#benefits">See Features</a>
                     </div>
                 </div>
             </div>
@@ -458,50 +259,150 @@
 
         <section id="demo">
             <div class="section-header">
-                <h2>Product demo</h2>
-                <p>Preview the dealer site and the lightweight lead manager that keeps your team in sync.</p>
+                <div class="eyebrow">Product demo</div>
+                <h2>Preview the dealer site and the lightweight lead manager.</h2>
+                <p>Tour the web experience and the CRM-light inbox that keeps your team in sync.</p>
             </div>
             <div class="card-grid">
                 <div class="card">
+                    <div class="card-icon">🚗</div>
                     <h3>Dealer website experience</h3>
                     <p>Homepage hero with featured vehicles, financing callouts, and prominent click-to-call for shoppers on mobile.</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon">📥</div>
                     <h3>Lead inbox</h3>
                     <p>Unified list of web leads with owner, status, and due dates. Open a lead to log calls, texts, and next steps.</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon">📈</div>
                     <h3>Simple analytics</h3>
                     <p>See top-performing vehicles, pages, and sources so you can double down on the campaigns that bring buyers in.</p>
                 </div>
+            </div>
+            <div class="section-cta">
+                <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+                <a class="btn btn-secondary" href="#pricing">See Packages</a>
+            </div>
+        </section>
+
+        <section id="social">
+            <div class="section-header">
+                <div class="eyebrow">Social proof</div>
+                <h2>Dealers stay because the sites convert and the follow-up is clear.</h2>
+                <p>Use these placeholders for testimonials, logos, or quick metrics to build trust.</p>
+            </div>
+            <div class="social-proof">
+                <div class="stat-band">
+                    <div class="stat">
+                        <strong>+38%</strong>
+                        <span>Increase in qualified form submissions</span>
+                    </div>
+                    <div class="stat">
+                        <strong>2.4x</strong>
+                        <span>More click-to-call from mobile shoppers</span>
+                    </div>
+                    <div class="stat">
+                        <strong>1 week</strong>
+                        <span>From kickoff to live site</span>
+                    </div>
+                </div>
+                <div class="card-grid">
+                    <div class="quote">
+                        <strong>Testimonial placeholder</strong>
+                        “LSV Auto Cloud gave us a premium site fast, and every web lead now has a clear owner and next step.”
+                    </div>
+                    <div class="quote">
+                        <strong>Testimonial placeholder</strong>
+                        “Our team finally knows which vehicles and campaigns are driving calls. Follow-ups are tracked without a heavy CRM.”
+                    </div>
+                    <div class="quote">
+                        <strong>Logo/award placeholder</strong>
+                        Add press, partner logos, or certifications here.
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+                <a class="btn btn-secondary" href="#contact">Talk to us</a>
             </div>
         </section>
 
         <section id="use-cases">
             <div class="section-header">
-                <h2>Use cases</h2>
-                <p>Built for independent dealers who need fast time-to-value and a clear view of every inbound shopper.</p>
+                <div class="eyebrow">Use cases</div>
+                <h2>Built for independent dealers who need fast time-to-value.</h2>
+                <p>Pick the scenario that matches your dealership and we’ll tailor the setup and lead flow.</p>
             </div>
             <div class="card-grid">
                 <div class="card">
+                    <div class="card-icon">🚀</div>
                     <h3>Fresh website launches</h3>
                     <p>Open a new location with a launch-ready site, vehicle gallery, and lead capture tuned for mobile visitors.</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon">🛟</div>
                     <h3>Lead rescue</h3>
                     <p>Route all web forms into one mini CRM so no one forgets to call back. Notes and reminders keep the team accountable.</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon">🎯</div>
                     <h3>Campaign landing pages</h3>
                     <p>Pair your ads with high-speed landing pages that spotlight inventory, credit options, and immediate calls to action.</p>
                 </div>
+            </div>
+            <div class="section-cta">
+                <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+                <a class="btn btn-secondary" href="#pricing">See Packages</a>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <div class="section-header">
+                <div class="eyebrow">Pricing / Book a demo</div>
+                <h2>Flexible packages with room to grow.</h2>
+                <p>Choose a launch bundle now and expand with AI tools and analytics as the team scales.</p>
+            </div>
+            <div class="pricing">
+                <div class="price-card">
+                    <h3>Launch</h3>
+                    <p>Premium dealer website, lead capture, and basic inbox.</p>
+                    <ul class="list">
+                        <li><span>•</span> Branded pages and inventory highlights.</li>
+                        <li><span>•</span> Financing + click-to-call CTAs.</li>
+                        <li><span>•</span> Lead routing + reminders.</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <h3>Growth</h3>
+                    <p>Everything in Launch plus CRM integrations and reporting.</p>
+                    <ul class="list">
+                        <li><span>•</span> Integrations with your existing tools.</li>
+                        <li><span>•</span> Simple analytics and accountability.</li>
+                        <li><span>•</span> Dedicated onboarding support.</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <h3>Scale</h3>
+                    <p>Full suite with AI tooling, campaign landing pages, and premium support.</p>
+                    <ul class="list">
+                        <li><span>•</span> AI copy + follow-up nudges.</li>
+                        <li><span>•</span> Multi-location + advanced reporting.</li>
+                        <li><span>•</span> Coached rollout and optimization.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Get a Free Demo</a>
+                <a class="btn btn-secondary" href="#contact">Talk to sales</a>
             </div>
         </section>
 
         <section id="about">
             <div class="section-header">
-                <h2>About LSV Auto Cloud</h2>
-                <p>We're a focused team building the fastest path to a great-looking dealer website with a built-in lead workflow.</p>
+                <div class="eyebrow">About LSV Auto Cloud</div>
+                <h2>We build the fastest path to a great-looking dealer website with a built-in lead workflow.</h2>
+                <p>We obsess over speed, simplicity, and affordability so small teams can run with modern tools from day one.</p>
             </div>
             <div class="about">
                 <div class="panel">
@@ -523,39 +424,62 @@
                     </ul>
                 </div>
             </div>
+            <div class="section-cta">
+                <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+                <a class="btn btn-secondary" href="#contact">Talk to us</a>
+            </div>
         </section>
 
         <section id="contact">
             <div class="section-header">
-                <h2>Contact</h2>
-                <p>Tell us about your dealership and we’ll share a tailored preview.</p>
+                <div class="eyebrow">Contact</div>
+                <h2>Tell us about your dealership and we’ll share a tailored preview.</h2>
+                <p>We respond within one business day with a proposed homepage and lead flow.</p>
             </div>
-            <div class="contact-form">
-                <form>
-                    <div>
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
-                    </div>
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="you@dealership.com" required>
-                    </div>
-                    <div>
-                        <label for="dealership">Dealership name</label>
-                        <input type="text" id="dealership" name="dealership" placeholder="Your dealership">
-                    </div>
-                    <div>
-                        <label for="message">What are you looking for?</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Site launch, lead process, specific integrations..."></textarea>
-                    </div>
-                    <button class="btn btn-primary" type="submit">Send message</button>
-                </form>
+            <div class="contact-section">
+                <div class="contact-form">
+                    <form id="contact-form" novalidate>
+                        <div class="form-row">
+                            <div>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@dealership.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div>
+                                <label for="dealership">Dealership name</label>
+                                <input type="text" id="dealership" name="dealership" placeholder="Your dealership" required>
+                            </div>
+                            <div>
+                                <label for="size">Team size</label>
+                                <select id="size" name="size" required>
+                                    <option value="">Select...</option>
+                                    <option value="1-5">1-5</option>
+                                    <option value="6-15">6-15</option>
+                                    <option value="16-30">16-30</option>
+                                    <option value="30+">30+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message">What are you looking for?</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Site launch, lead process, specific integrations..." required></textarea>
+                            <div class="form-helper">We never share your details. Expect a reply within 1 business day.</div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Send message</button>
+                        <div class="form-status" id="form-status" aria-live="polite"></div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        © 2024 LSV Auto Cloud. All rights reserved.
+        © 2024 LSV Auto Cloud. All rights reserved. | <a href="#top">Back to top</a>
     </footer>
 </body>
 </html>
