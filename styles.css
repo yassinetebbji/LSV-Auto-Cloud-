@@ -47,7 +47,7 @@ header {
 }
 
 .nav {
-    height: 74px;
+    height: 98px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -62,6 +62,14 @@ header {
     font-weight: 700;
     letter-spacing: 0.2px;
     color: var(--ink-900);
+    padding: 0;
+}
+
+.brand-logo {
+    height: 82px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 6px 12px rgba(255, 107, 53, 0.22));
 }
 
 .brand-mark {
@@ -395,8 +403,25 @@ h1, h2, h3, h4 {
     color: var(--ink-900);
 }
 
+.stat-card .stat-desc,
+.stat-card .because {
+    display: block;
+}
+
+.stat-card .because {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
 .quote-card p { margin: 0; color: var(--ink-700); }
 .quote-card strong { color: var(--ink-500); }
+
+.micro-cta {
+    margin-top: 18px;
+    color: var(--ink-700);
+    font-weight: 600;
+}
 
 .contact-section {
     display: grid;
@@ -466,7 +491,49 @@ footer {
 
 @media (max-width: 720px) {
     main section { padding: 64px 0; }
-    .hero { padding-top: 24px; }
-    .cta-group { width: 100%; }
-    .btn { justify-content: center; flex: 1; }
+    header { position: sticky; }
+    .nav {
+        height: auto;
+        padding: 10px 0 14px;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+    .nav-links a {
+        flex: 1 1 calc(50% - 10px);
+        text-align: center;
+    }
+    .nav-links a.btn-primary {
+        flex: 1 1 100%;
+        order: 1;
+    }
+    .hero {
+        padding-top: 24px;
+        gap: 24px;
+    }
+    .lead { font-size: 17px; margin: 10px 0 12px; }
+    .cta-group {
+        width: 100%;
+        flex-direction: column;
+    }
+    .btn {
+        justify-content: center;
+        flex: 1 1 auto;
+        width: 100%;
+    }
+    .hero-list { margin-top: 8px; }
+    .hero-metrics { margin-top: 12px; }
+    .hero-card { max-width: 100%; }
+    .section-header { margin-bottom: 18px; }
+    .section-header p { margin-top: 8px; }
+    .feature-grid,
+    .platform-grid,
+    .process-grid,
+    .proof-grid,
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+    .form-row { grid-template-columns: 1fr; }
+    .brand-logo { height: 64px; }
 }
