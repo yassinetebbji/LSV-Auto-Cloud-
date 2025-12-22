@@ -16,6 +16,11 @@
             <a class="brand" href="#top" aria-label="LSV Auto Cloud">
                 <img class="brand-logo" src="logo.png" alt="LSV Auto Cloud logo">
             </a>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="nav-links">
                 <a href="#features">Product</a>
                 <a href="#process">How it works</a>
@@ -25,6 +30,19 @@
             </div>
         </div>
     </header>
+    <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+    <aside class="mobile-nav" id="mobile-nav" aria-hidden="true">
+        <div class="mobile-nav-inner">
+            <div class="mobile-nav-title">Menu</div>
+            <nav class="mobile-nav-links">
+                <a href="#features">Product</a>
+                <a href="#process">How it works</a>
+                <a href="#proof">Results</a>
+                <a href="#contact">Contact</a>
+                <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+            </nav>
+        </div>
+    </aside>
 
     <main class="container">
         <section class="hero" id="hero">
@@ -191,7 +209,7 @@
             </div>
             <div class="contact-section">
                 <div class="contact-form">
-                    <form id="contact-form" novalidate>
+                    <form id="contact-form" method="post" action="/api/contact" novalidate>
                         <div class="form-row">
                             <div>
                                 <label for="name">Name</label>
@@ -221,7 +239,7 @@
                         <div>
                             <label for="message">What do you want to improve?</label>
                             <textarea id="message" name="message" rows="4" placeholder="Faster site, better follow-up, campaign pages..." required></textarea>
-                            <div class="form-helper">We never share your details. Expect a reply within one business day.</div>
+                            
                         </div>
                         <button class="btn btn-primary" type="submit">Send message</button>
                         <div class="form-status" id="form-status" aria-live="polite"></div>
@@ -231,8 +249,22 @@
         </section>
     </main>
 
-    <footer>
-        © 2024 LSV Auto Cloud. All rights reserved. | <a href="#top">Back to top</a>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span class="footer-copy">© <span id="footer-year">2026</span> LSV Auto Cloud. All rights reserved.</span>
+            <span class="footer-powered">
+                <img src="logo.png" alt="LSV Auto Cloud logo">
+                Powered by LSV Auto Cloud
+            </span>
+        </div>
     </footer>
+    <div class="modal-backdrop" id="success-backdrop" aria-hidden="true"></div>
+    <div class="modal" id="success-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="success-title">
+        <div class="modal-card">
+            <h3 id="success-title">Message sent</h3>
+            <p>Thanks! We received your request and will reply within one business day.</p>
+            <button class="btn btn-primary" id="success-close" type="button">Close</button>
+        </div>
+    </div>
 </body>
 </html>
