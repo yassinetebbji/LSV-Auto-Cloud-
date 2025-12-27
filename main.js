@@ -1,3 +1,5 @@
+document.documentElement.classList.remove('no-js');
+
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 
@@ -130,3 +132,37 @@ const footerYear = document.getElementById('footer-year');
 if (footerYear) {
     footerYear.textContent = new Date().getFullYear();
 }
+
+const revealOnScroll = (elements, options = {}) => {
+    const elementList = Array.from(elements);
+    if (!elementList.length) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        elementList.forEach((el) => el.classList.add('is-visible'));
+        return;
+    }
+
+    if (!('IntersectionObserver' in window)) {
+        elementList.forEach((el) => el.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.2,
+            rootMargin: '0px 0px -10% 0px',
+            ...options,
+        }
+    );
+
+    elementList.forEach((el) => observer.observe(el));
+};
+
+revealOnScroll(document.querySelectorAll('.feature-grid .feature'));
