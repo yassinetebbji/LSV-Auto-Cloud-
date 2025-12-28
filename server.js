@@ -23,14 +23,22 @@ const cleanField = (value, maxLen) => {
 };
 
 app.post('/api/contact', async (req, res) => {
+    // Honeypot spam protection - reject if honeypot field is filled
+    if (req.body.website) {
+        console.warn('Spam detected via honeypot field');
+        // Return success to avoid giving spammers feedback
+        return res.json({ ok: true });
+    }
+
     const name = cleanField(req.body.name, 120);
     const email = cleanField(req.body.email, 180);
+    const phone = cleanField(req.body.phone, 40);
     const business = cleanField(req.body.business, 180);
     const size = cleanField(req.body.size, 40);
     const message = cleanField(req.body.message, 2000);
 
-    if (!name || !email || !business || !size || !message) {
-        return res.status(400).json({ ok: false, error: 'Missing fields' });
+    if (!name || !email || !phone || !business || !size || !message) {
+        return res.status(400).json({ ok: false, error: 'Missing required fields', message: 'Please complete all required fields.' });
     }
 
     const toAddress = process.env.CONTACT_RECIPIENT || process.env.GMAIL_USER;
@@ -48,6 +56,7 @@ app.post('/api/contact', async (req, res) => {
             text: [
                 `Name: ${name}`,
                 `Email: ${email}`,
+                `Phone: ${phone}`,
                 `Business: ${business}`,
                 `Team size: ${size}`,
                 '',
