@@ -55,7 +55,7 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "LocalBusiness",
         "name": "LSV Auto Cloud",
         "alternateName": "LSV Auto Cloud",
         "description": "Automotive websites with built-in lead follow-up and AI support for car dealers",
@@ -67,6 +67,27 @@
             "height": "60"
         },
         "image": "https://www.lsvautocloud.com/og-image.png",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Montreal",
+            "addressRegion": "QC",
+            "addressCountry": "CA"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "45.5017",
+            "longitude": "-73.5673"
+        },
+        "areaServed": [
+            {
+                "@type": "Country",
+                "name": "United States"
+            },
+            {
+                "@type": "Country",
+                "name": "Canada"
+            }
+        ],
         "sameAs": [
             "https://www.facebook.com/share/1ZH8hLANGN/?mibextid=wwXIfr",
             "https://www.instagram.com/lsvautocloud"
@@ -75,8 +96,8 @@
             "@type": "ContactPoint",
             "contactType": "Sales",
             "email": "contact@lsvautocloud.com",
-            "areaServed": "US",
-            "availableLanguage": "English"
+            "areaServed": ["US", "CA"],
+            "availableLanguage": ["English", "French"]
         },
         "aggregateRating": {
             "@type": "AggregateRating",
@@ -85,6 +106,8 @@
             "bestRating": "5",
             "worstRating": "1"
         },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 09:00-17:00",
         "offers": {
             "@type": "Offer",
             "description": "Automotive website development with lead management system",
@@ -97,10 +120,16 @@
                     "name": "LSV Auto Cloud"
                 },
                 "serviceType": "Website Development",
-                "areaServed": {
-                    "@type": "Country",
-                    "name": "United States"
-                }
+                "areaServed": [
+                    {
+                        "@type": "Country",
+                        "name": "United States"
+                    },
+                    {
+                        "@type": "Country",
+                        "name": "Canada"
+                    }
+                ]
             }
         }
     }
@@ -184,7 +213,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
 </head>
@@ -197,7 +227,7 @@
     <header>
         <div class="container nav">
             <a class="brand" href="#top" aria-label="LSV Auto Cloud">
-                <img class="brand-logo" src="logo.png" alt="LSV Auto Cloud logo">
+                <img class="brand-logo" src="logo.png" alt="LSV Auto Cloud logo" width="200" height="60">
             </a>
             <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
                 <span></span>
@@ -206,6 +236,7 @@
             </button>
             <div class="nav-links">
                 <a href="#features">Product</a>
+                <a href="#why-choose">Why Us</a>
                 <a href="#process">How it works</a>
                 <a href="#proof">Results</a>
                 <a href="#contact">Contact</a>
@@ -233,6 +264,7 @@
             <div class="mobile-nav-title">Menu</div>
             <nav class="mobile-nav-links">
                 <a href="#features">Product</a>
+                <a href="#why-choose">Why Us</a>
                 <a href="#process">How it works</a>
                 <a href="#proof">Results</a>
                 <a href="#contact">Contact</a>
@@ -293,7 +325,7 @@
                             <span>Assignments, notes, reminders, AI assist.</span>
                         </div>
                     </div>
-                    <a class="text-link" href="https://demo.lsvautocloud.com" target="_blank" rel="noopener">See a sample site →</a>
+                    <a class="text-link" href="https://demo.lsvautocloud.com" target="_blank" rel="noopener">See a sample site</a>
                 </div>
             </div>
         </section>
@@ -308,24 +340,128 @@
             </div>
             <div class="feature-grid">
                 <div class="feature">
-                    <div class="card-icon" aria-label="Computer icon">🖥</div>
+                    <div class="card-icon" aria-label="Computer icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
                     <h3>Website that sells</h3>
                     <p>Car dealership website builder with CRM integration, personalized mobile-first layouts, inventory highlights, and financing CTAs that make calling easy.</p>
                 </div>
                 <div class="feature">
-                    <div class="card-icon" aria-label="Megaphone icon">📣</div>
+                    <div class="card-icon" aria-label="Megaphone icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 11l18-5v12L3 14v-3z"></path>
+                            <path d="M11.6 16.8a3 3 0 11-5.8-1.6"></path>
+                        </svg>
+                    </div>
                     <h3>Marketplace automation</h3>
                     <p>AI writes listings, optimizes photos, and posts to Facebook Marketplace so you stay visible.</p>
                 </div>
                 <div class="feature">
-                    <div class="card-icon" aria-label="Contact card icon">📇</div>
+                    <div class="card-icon" aria-label="Contact card icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 00-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 010 7.75"></path>
+                        </svg>
+                    </div>
                     <h3>Follow-up system</h3>
                     <p>Assignments, reminders, SMS/email notes, and nudges so every inquiry has an owner and a next step.</p>
                 </div>
                 <div class="feature">
-                    <div class="card-icon" aria-label="Chart icon">📊</div>
+                    <div class="card-icon" aria-label="Chart icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="20" x2="12" y2="10"></line>
+                            <line x1="18" y1="20" x2="18" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="16"></line>
+                        </svg>
+                    </div>
                     <h3>Performance tracking</h3>
                     <p>Dashboards for sales, leads, inventory, and user management to keep the team accountable.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-choose">
+            <div class="section-header">
+                <div class="eyebrow">Why LSV Auto Cloud</div>
+                <h2>Built for small dealer teams who want more sales, not more complexity.</h2>
+                <p>We're not another bloated enterprise platform. LSV Auto Cloud combines website, CRM, and AI automation in one affordable package designed for independent dealers.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card why-card-highlight">
+                    <div class="why-icon">⚡</div>
+                    <h3>Launch in 20 days, not months</h3>
+                    <p>No drawn-out implementations or technical headaches. We handle setup, hosting, and integrations so you're live and selling fast.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💰</div>
+                    <h3>Transparent pricing, no surprises</h3>
+                    <p>We offer packages tailored to your needs. No hidden fees, no forced upgrades. Pay only for what you need as your dealership grows.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🎯</div>
+                    <h3>Built for automotive, not adapted</h3>
+                    <p>Unlike generic website builders, we understand inventory feeds, trade-in forms, financing CTAs, and dealer-specific lead flows.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🤖</div>
+                    <h3>AI that actually helps you sell</h3>
+                    <p>Auto-post to Facebook Marketplace, draft follow-up messages, and get intelligent reminders—not just chatbots.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">📱</div>
+                    <h3>Mobile-first for today's buyers</h3>
+                    <p>Most shoppers browse on phones. Your site works beautifully on mobile with click-to-call and optimized layouts.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🇨🇦</div>
+                    <h3>Montreal-based, North America-focused</h3>
+                    <p>Real support from our Canadian team. We understand US and Canadian markets, regulations, and dealer challenges.</p>
+                </div>
+            </div>
+            <div class="why-comparison">
+                <h3>LSV Auto Cloud vs Traditional Dealer Platforms</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-row comparison-header">
+                        <div class="comparison-feature"></div>
+                        <div class="comparison-lsv">LSV Auto Cloud</div>
+                        <div class="comparison-other">Legacy Platforms</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Launch time</div>
+                        <div class="comparison-lsv"><span class="check">✓</span> 20 days average</div>
+                        <div class="comparison-other"><span class="cross">✗</span> 3-6 months</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Built-in CRM</div>
+                        <div class="comparison-lsv"><span class="check">✓</span> Included</div>
+                        <div class="comparison-other"><span class="cross">✗</span> Extra $200+/mo</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-feature">AI automation</div>
+                        <div class="comparison-lsv"><span class="check">✓</span> Marketplace, listings, follow-ups</div>
+                        <div class="comparison-other"><span class="cross">✗</span> Basic or none</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Mobile optimization</div>
+                        <div class="comparison-lsv"><span class="check">✓</span> Mobile-first design</div>
+                        <div class="comparison-other"><span class="partial">~</span> Desktop-first (adapted)</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Support</div>
+                        <div class="comparison-lsv"><span class="check">✓</span> Direct team access</div>
+                        <div class="comparison-other"><span class="cross">✗</span> Ticketing system</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-feature">Contract flexibility</div>
+                        <div class="comparison-lsv"><span class="check">✓</span> Month-to-month</div>
+                        <div class="comparison-other"><span class="cross">✗</span> 12-36 month lock-in</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -416,52 +552,19 @@
             <div class="section-header">
                 <div class="eyebrow">Book a demo</div>
                 <h2>See LSV Auto Cloud in action</h2>
-                <p>Pick a 30-minute slot to walk through the dealer website, CRM, and Marketplace automation—no obligation.</p>
+                <p>Pick a 30-minute slot to walk through the dealer website, CRM, and Marketplace automation. <strong>No credit card required.</strong></p>
             </div>
             <div class="demo-embed" id="cal-inline-30min" aria-label="Schedule a demo"></div>
         </section>
 
-        <section id="trust">
-            <div class="trust-signals">
-                <div class="trust-item">
-                    <div class="trust-icon">✓</div>
-                    <div>
-                        <strong>Fast Launch</strong>
-                        <span>Average 10-day setup from kickoff to live site</span>
-                    </div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">✓</div>
-                    <div>
-                        <strong>Proven Results</strong>
-                        <span>22% faster lead response, 15% more appointments</span>
-                    </div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">✓</div>
-                    <div>
-                        <strong>Full Support</strong>
-                        <span>Dedicated onboarding and ongoing technical assistance</span>
-                    </div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">✓</div>
-                    <div>
-                        <strong>Secure Hosting</strong>
-                        <span>SSL encryption, daily backups, 99.9% uptime</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="contact">
-            <div class="section-header">
-                <div class="eyebrow">Talk to us</div>
-                <h2>Tell us about your business and we'll send a tailored preview.</h2>
-                <p>We reply within one business day with a proposed homepage and lead flow.</p>
-            </div>
             <div class="contact-section">
                 <div class="contact-form">
+                    <div class="contact-form-header">
+                        <div class="eyebrow">Get in touch</div>
+                        <h2>Let's build something exceptional together.</h2>
+                        <p>Share your vision with us, and our team will reach out to discuss how we can bring your dealership's digital presence to life.</p>
+                    </div>
                     <form id="contact-form" method="post" action="/api/contact" novalidate>
                         <div class="form-row">
                             <div>
@@ -516,11 +619,11 @@
         <div class="container footer-inner">
             <div class="footer-left">
                 <span class="footer-copy">© <span id="footer-year">2025</span> LSV Auto Cloud. All rights reserved.</span>
-                <a class="footer-link" href="/privacy.html">Privacy Policy</a>
-                <a class="footer-link" href="/terms.html">Terms &amp; Conditions</a>
+                <a class="footer-link" href="/privacy">Privacy Policy</a>
+                <a class="footer-link" href="/terms">Terms &amp; Conditions</a>
             </div>
             <a class="footer-powered" href="https://www.lsvautocloud.com" target="_blank" rel="noopener" aria-label="LSV Auto Cloud">
-                <img src="logo.png" alt="LSV Auto Cloud logo">
+                <img src="logo.png" alt="LSV Auto Cloud logo" width="200" height="60" loading="lazy">
                 Powered by LSV Auto Cloud
             </a>
         </div>
@@ -540,6 +643,11 @@
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
+
+    <!-- Mobile Sticky CTA -->
+    <a href="#book-demo" class="mobile-sticky-cta" id="mobile-sticky-cta" aria-label="Book a demo">
+        Book a Demo
+    </a>
 
     <!-- Cookie Consent Banner -->
     <div class="cookie-consent" id="cookie-consent" aria-live="polite" role="dialog" aria-label="Cookie consent">

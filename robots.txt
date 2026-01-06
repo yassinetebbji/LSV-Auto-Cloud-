@@ -1,4 +1,17 @@
+# robots.txt for LSV Auto Cloud
+# https://www.lsvautocloud.com/robots.txt
+
 User-agent: *
 Allow: /
 
+# Sitemap location
 Sitemap: https://www.lsvautocloud.com/sitemap.xml
+
+# Disallow common admin/system paths
+Disallow: /api/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow important pages
+Allow: /privacy.html
+Allow: /terms.html

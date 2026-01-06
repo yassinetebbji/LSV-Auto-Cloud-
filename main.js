@@ -350,6 +350,28 @@ if (backToTop) {
     });
 }
 
+// Mobile Sticky CTA
+const mobileStickyCta = document.getElementById('mobile-sticky-cta');
+if (mobileStickyCta) {
+    window.addEventListener('scroll', () => {
+        // Show after scrolling past hero section (approximately 600px)
+        if (window.scrollY > 600) {
+            mobileStickyCta.classList.add('visible');
+        } else {
+            mobileStickyCta.classList.remove('visible');
+        }
+    }, { passive: true });
+
+    // Track clicks on mobile sticky CTA
+    mobileStickyCta.addEventListener('click', () => {
+        trackEvent('click', {
+            event_category: 'CTA',
+            event_label: 'Mobile Sticky Book Demo',
+            link_url: '#book-demo'
+        });
+    });
+}
+
 // Cookie Consent
 const cookieConsent = document.getElementById('cookie-consent');
 const acceptCookies = document.getElementById('accept-cookies');
