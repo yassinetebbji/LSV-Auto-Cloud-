@@ -739,6 +739,20 @@ h3 {
     gap: 14px;
 }
 
+.demo-section {
+    margin: 96px 0;
+}
+
+.demo-embed {
+    width: 100%;
+    min-height: 720px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+}
+
 .platform-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -1133,6 +1147,8 @@ footer {
     .contact-form select {
         font-size: 16px;
     }
+    .demo-section { margin: 64px 0; }
+    .demo-embed { min-height: 640px; }
     .brand-logo { height: 48px; }
 }
 

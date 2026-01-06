@@ -209,7 +209,7 @@
                 <a href="#process">How it works</a>
                 <a href="#proof">Results</a>
                 <a href="#contact">Contact</a>
-                <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+                <a class="btn btn-primary" href="#book-demo">Book a Demo</a>
                 <div class="nav-social-group social-icons">
                     <a class="nav-social" href="https://www.facebook.com/share/1ZH8hLANGN/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Follow us on Facebook">
                         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
@@ -236,7 +236,7 @@
                 <a href="#process">How it works</a>
                 <a href="#proof">Results</a>
                 <a href="#contact">Contact</a>
-                <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+                <a class="btn btn-primary" href="#book-demo">Book a Demo</a>
                 <div class="mobile-social-group social-icons">
                     <a class="nav-social-mobile" href="https://www.facebook.com/share/1ZH8hLANGN/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Follow us on Facebook">
                         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
@@ -262,7 +262,7 @@
                 <h1>Automotive Website Builder for Car Dealers with CRM & Lead Management</h1>
                 <p class="lead">Launch a dealer website with inventory listings, trade-in/finance leads, and a built-in CRM to organize customers, tasks, and follow-ups automatically. Montreal-based team. Launch in 20 days.</p>
                 <div class="cta-group">
-                    <a class="btn btn-primary" href="https://calendly.com/lsv-auto-cloud/demo" target="_blank" rel="noopener">Book a Demo</a>
+                <a class="btn btn-primary" href="#book-demo">Book a Demo</a>
                     <a class="btn btn-secondary" href="#contact">Talk to sales</a>
                 </div>
                 <ul class="hero-list">
@@ -409,7 +409,16 @@
                     <strong>Owner, 50-vehicle independent dealer, Midwest</strong>
                 </div>
             </div>
-            <p class="micro-cta">Want to compare your numbers? Book a Demo.</p>
+            <p class="micro-cta">Want to compare your numbers? <a href="#book-demo">Book a Demo.</a></p>
+        </section>
+
+        <section id="book-demo" class="demo-section">
+            <div class="section-header">
+                <div class="eyebrow">Book a demo</div>
+                <h2>See LSV Auto Cloud in action</h2>
+                <p>Pick a 30-minute slot to walk through the dealer website, CRM, and Marketplace automation—no obligation.</p>
+            </div>
+            <div class="demo-embed" id="cal-inline-30min" aria-label="Schedule a demo"></div>
         </section>
 
         <section id="trust">
@@ -538,5 +547,44 @@
             </div>
         </div>
     </div>
+
+    <!-- Cal.com inline embed for demo booking -->
+    <script type="text/javascript">
+        (function (C, A, L) {
+            const p = (a, ar) => { a.q.push(ar); };
+            const d = C.document;
+            C.Cal = C.Cal || function () {
+                const cal = C.Cal;
+                const ar = arguments;
+                if (!cal.loaded) {
+                    cal.ns = {};
+                    cal.q = cal.q || [];
+                    d.head.appendChild(d.createElement("script")).src = A;
+                    cal.loaded = true;
+                }
+                if (ar[0] === L) {
+                    const api = function () { p(api, arguments); };
+                    const namespace = ar[1];
+                    api.q = api.q || [];
+                    if (typeof namespace === "string") {
+                        cal.ns[namespace] = cal.ns[namespace] || api;
+                        p(cal.ns[namespace], ar);
+                        p(cal, ["initNamespace", namespace]);
+                    } else {
+                        p(cal, ar);
+                    }
+                    return;
+                }
+                p(cal, ar);
+            };
+        })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", "demo", { origin: "https://app.cal.com" });
+        Cal.ns["demo"]("inline", {
+            elementOrSelector: "#cal-inline-30min",
+            config: { layout: "month_view", theme: "light" },
+            calLink: "lsvautocloud-mvlyxh/30min",
+        });
+        Cal.ns["demo"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "month_view" });
+    </script>
 </body>
 </html>
