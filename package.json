@@ -5,7 +5,8 @@
   "description": "LSV Auto Cloud marketing site with contact form email delivery.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "update:sitemap": "node scripts/update-sitemap.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
