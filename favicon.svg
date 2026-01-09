@@ -1,12 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LSV Auto Cloud">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FF8A4C"/>
       <stop offset="100%" stop-color="#FF6B35"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="12" fill="url(#g)"/>
-  <text x="32" y="38" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#0B1D2C">
+  <path
+    d="M21 50h22.5c6.3 0 11.5-5 11.5-11 0-3.9-2.1-7.4-5.4-9.4C49.2 20.4 43.8 16 37.1 16c-4.2 0-8 2-10.5 5.2a12.7 12.7 0 0 0-3.5-.5c-6.6 0-12 5.1-12 11.5C11 44.6 15.9 50 21 50Z"
+    fill="#fff"
+    stroke="url(#accent)"
+    stroke-width="3"
+    stroke-linejoin="round"
+  />
+  <text
+    x="32"
+    y="38"
+    text-anchor="middle"
+    font-family="Inter, Arial, sans-serif"
+    font-size="18"
+    font-weight="800"
+    fill="url(#accent)"
+  >
     LSV
   </text>
 </svg>

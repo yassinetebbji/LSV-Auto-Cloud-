@@ -60,6 +60,13 @@ body.loading {
     overflow: hidden;
 }
 
+body.loading main,
+body.loading header,
+body.loading aside {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .page-loader {
     position: fixed;
     top: 0;
@@ -194,6 +201,42 @@ body.is-scroll-animating header {
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-end;
+}
+
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    color: var(--ink-700);
+}
+
+.lang-pill {
+    border: 1px solid #d9e4f0;
+    background: #ffffff;
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    color: var(--ink-800);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.lang-pill:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+}
+
+.lang-pill:focus-visible {
+    outline: 2px solid var(--accent-500);
+    outline-offset: 2px;
+}
+
+.lang-pill.is-active {
+    color: var(--accent-600);
+    border-color: #cbd5e1;
 }
 
 .nav-links > a.btn-primary {
@@ -1482,6 +1525,14 @@ footer {
     .nav-links {
         display: none;
     }
+    .lang-toggle {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 4px;
+    }
+    .lang-toggle-mobile {
+        padding: 4px 0 0;
+    }
     .nav-links a {
         text-align: center;
         padding: 10px 8px;
@@ -1520,11 +1571,10 @@ footer {
     .hero-list { margin-top: 8px; }
     .hero-metrics {
         margin-top: 12px;
-        flex-direction: column;
-        align-items: stretch;
+        gap: 8px;
     }
     .pill {
-        width: 100%;
+        flex: 1 1 auto;
         min-width: 0;
     }
     .hero-card {
@@ -1565,12 +1615,12 @@ footer {
         display: none;
     }
     .comparison-lsv::before {
-        content: 'LSV: ';
+        content: attr(data-label);
         font-weight: 700;
         color: var(--ink-900);
     }
     .comparison-other::before {
-        content: 'Others: ';
+        content: attr(data-label);
         font-weight: 700;
         color: var(--ink-700);
     }

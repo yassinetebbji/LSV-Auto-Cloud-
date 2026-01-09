@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LSV Auto Cloud | Automotive Websites That Convert</title>
-    <meta name="description" content="Automotive website builder for car dealers with CRM. Launch in 20 days with inventory listings, trade-in/finance leads, and lead and follow-up tracking.">
+    <title>LSV Auto Cloud | Automotive Website Builder & Dealer CRM</title>
+    <meta name="description" content="Automotive website builder and dealer CRM with lead routing, Facebook Marketplace auto posting, and AI vehicle listings. Launch your car dealership website fast in the US and Canada.">
     <meta name="keywords" content="automotive website builder, car dealer website builder with CRM, car dealership website maker, automotive website platform, AI Marketplace listings, Facebook Marketplace autoposting, dealer lead routing, automotive CRM, high converting dealer sites">
     <meta name="author" content="LSV Auto Cloud">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -243,10 +243,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Critical CSS to prevent FOUC */
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+        body.loading {
+            overflow: hidden;
+        }
+        body.loading main,
+        body.loading header,
+        body.loading aside {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #fafafa, #ffffff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 1;
+        }
+        body:not(.loading) .page-loader {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid #e5e5e5;
+            border-top-color: #FF6B35;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
 </head>
-<body id="top" class="loading">
+<body id="top" class="loading" style="background: #fafafa;">
     <!-- Page Loading Spinner -->
     <div class="page-loader" id="page-loader">
         <div class="spinner"></div>
@@ -263,12 +309,12 @@
                 <span></span>
             </button>
             <div class="nav-links">
-                <a href="#features">Product</a>
-                <a href="#why-choose">Why Us</a>
-                <a href="#process">How it works</a>
-                <a href="#proof">Results</a>
-                <a href="#contact">Contact</a>
-                <a class="btn btn-primary" href="#book-demo">Book a Demo</a>
+                <a href="#features" data-i18n="nav.product">Product</a>
+                <a href="#why-choose" data-i18n="nav.why">Why Us</a>
+                <a href="#process" data-i18n="nav.how">How it works</a>
+                <a href="#proof" data-i18n="nav.results">Results</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+                <a class="btn btn-primary" href="#book-demo" data-i18n="cta.bookDemo">Book a Demo</a>
                 <div class="nav-social-group social-icons">
                     <a class="nav-social" href="https://www.facebook.com/share/1ZH8hLANGN/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Follow us on Facebook">
                         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
@@ -283,20 +329,23 @@
                         </svg>
                     </a>
                 </div>
+                <div class="lang-toggle" role="group" aria-label="Language">
+                    <button class="lang-pill" type="button" data-role="lang-toggle"></button>
+                </div>
             </div>
         </div>
     </header>
     <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
     <aside class="mobile-nav" id="mobile-nav" aria-hidden="true">
         <div class="mobile-nav-inner">
-            <div class="mobile-nav-title">Menu</div>
+            <div class="mobile-nav-title" data-i18n="nav.menuTitle">Menu</div>
             <nav class="mobile-nav-links">
-                <a href="#features">Product</a>
-                <a href="#why-choose">Why Us</a>
-                <a href="#process">How it works</a>
-                <a href="#proof">Results</a>
-                <a href="#contact">Contact</a>
-                <a class="btn btn-primary" href="#book-demo">Book a Demo</a>
+                <a href="#features" data-i18n="nav.product">Product</a>
+                <a href="#why-choose" data-i18n="nav.why">Why Us</a>
+                <a href="#process" data-i18n="nav.how">How it works</a>
+                <a href="#proof" data-i18n="nav.results">Results</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+                <a class="btn btn-primary" href="#book-demo" data-i18n="cta.bookDemo">Book a Demo</a>
                 <div class="mobile-social-group social-icons">
                     <a class="nav-social-mobile" href="https://www.facebook.com/share/1ZH8hLANGN/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Follow us on Facebook">
                         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
@@ -311,6 +360,9 @@
                         </svg>
                     </a>
                 </div>
+                <div class="lang-toggle lang-toggle-mobile" role="group" aria-label="Language">
+                    <button class="lang-pill" type="button" data-role="lang-toggle"></button>
+                </div>
             </nav>
         </div>
     </aside>
@@ -318,43 +370,43 @@
     <main class="container">
         <section class="hero" id="hero">
             <div class="hero-copy">
-                <div class="eyebrow">Automotive websites in days</div>
-                <h1>Automotive Website Builder for Car Dealers with CRM & Lead Management</h1>
-                <p class="lead">Launch a dealer website with inventory listings, trade-in/finance leads, and a built-in CRM to organize customers, tasks, and follow-ups automatically. Montreal-based team. Launch in 20 days.</p>
+                <div class="eyebrow" data-i18n="hero.eyebrow">Automotive websites in days</div>
+                <h1 data-i18n="hero.title">Automotive Website Builder for Car Dealers with CRM &amp; Lead Management</h1>
+                <p class="lead" data-i18n="hero.lead">Launch a dealer website with inventory listings, trade-in/finance leads, and a built-in CRM to organize customers, tasks, and follow-ups automatically. Montreal-based team. Launch in 20 days.</p>
                 <div class="cta-group">
-                <a class="btn btn-primary" href="#book-demo">Book a Demo</a>
-                    <a class="btn btn-secondary" href="#contact">Talk to sales</a>
+                <a class="btn btn-primary" href="#book-demo" data-i18n="cta.bookDemo">Book a Demo</a>
+                    <a class="btn btn-secondary" href="#contact" data-i18n="cta.talkToSales">Talk to sales</a>
                 </div>
                 <ul class="hero-list">
-                    <li><span>•</span> Personalized, mobile-first pages for inventory and offers.</li>
-                    <li><span>•</span> Built-in lead routing with owners, reminders, and notes.</li>
-                    <li><span>•</span> AI drafts listings, replies, and follow-up tasks.</li>
-                    <li><span>•</span> Go live in days with our team on the build.</li>
-                    <li><span>•</span> Performance tracking across sales, leads, inventory, and users.</li>
+                    <li data-i18n="hero.point1"><span>•</span> Personalized, mobile-first pages for inventory and offers.</li>
+                    <li data-i18n="hero.point2"><span>•</span> Built-in lead routing with owners, reminders, and notes.</li>
+                    <li data-i18n="hero.point3"><span>•</span> AI drafts listings, replies, and follow-up tasks.</li>
+                    <li data-i18n="hero.point4"><span>•</span> Go live in days with our team on the build.</li>
+                    <li data-i18n="hero.point5"><span>•</span> Performance tracking across sales, leads, inventory, and users.</li>
                 </ul>
                 <div class="hero-metrics">
-                    <div class="pill"><strong>20 days</strong><small>average launch</small></div>
-                    <div class="pill"><strong>+42%</strong><small>lift in web-to-call</small></div>
-                    <div class="pill"><strong>24/7</strong><small>lead routing + nudges</small></div>
+                    <div class="pill"><strong data-i18n="hero.metric.days">20 days</strong><small data-i18n="hero.metric.launch">average launch</small></div>
+                    <div class="pill"><strong>+42%</strong><small data-i18n="hero.metric.calls">lift in web-to-call</small></div>
+                    <div class="pill"><strong>24/7</strong><small data-i18n="hero.metric.routing">lead routing + nudges</small></div>
                 </div>
-                <p><a class="text-link" href="#book-demo">See the dealer website builder with CRM in action →</a></p>
+                <p><a class="text-link" href="#book-demo" data-i18n="hero.link">See the dealer website builder with CRM in action</a></p>
             </div>
             <div class="hero-visual" aria-hidden="true">
                 <div class="hero-card">
-                    <div class="tag">What you get</div>
-                    <h3>Website + lead desk + AI</h3>
-                    <p>Branded site, fast landing pages, and a shared inbox with AI support so your team always knows who to call next.</p>
+                    <div class="tag" data-i18n="hero.tag">What you get</div>
+                    <h3 data-i18n="hero.cardTitle">Website + lead desk + AI</h3>
+                    <p data-i18n="hero.cardDesc">Branded site, fast landing pages, and a shared inbox with AI support so your team always knows who to call next.</p>
                     <div class="mini-grid">
                         <div class="mini-card">
-                            <strong>Website</strong>
-                            <span>Homepage, inventory highlights, financing CTAs.</span>
+                            <strong data-i18n="hero.cardWebsiteTitle">Website</strong>
+                            <span data-i18n="hero.cardWebsiteDesc">Homepage, inventory highlights, financing CTAs.</span>
                         </div>
                         <div class="mini-card">
-                            <strong>Lead desk</strong>
-                            <span>Assignments, notes, reminders, AI assist.</span>
+                            <strong data-i18n="hero.cardLeadTitle">Lead desk</strong>
+                            <span data-i18n="hero.cardLeadDesc">Assignments, notes, reminders, AI assist.</span>
                         </div>
                     </div>
-                    <a class="text-link" href="https://demo.lsvautocloud.com" target="_blank" rel="noopener">See a sample site</a>
+                    <a class="text-link" href="https://demo.lsvautocloud.com" target="_blank" rel="noopener" data-i18n="hero.cardSample">See a sample site</a>
                 </div>
             </div>
         </section>
@@ -363,9 +415,9 @@
 
         <section id="features">
             <div class="section-header">
-                <div class="eyebrow">Product</div>
-                <h2>Everything you need to sell vehicles online without a bulky stack.</h2>
-                <p>Clean pages, fast response, and a simple CRM-style lead desk with AI support.</p>
+                <div class="eyebrow" data-i18n="product.eyebrow">Product</div>
+                <h2 data-i18n="product.title">Everything you need to sell vehicles online without a bulky stack.</h2>
+                <p data-i18n="product.desc">Clean pages, fast response, and a simple CRM-style lead desk with AI support.</p>
             </div>
             <div class="feature-grid">
                 <div class="feature">
@@ -376,8 +428,8 @@
                             <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
                     </div>
-                    <h3>Website that sells</h3>
-                    <p>Car dealership website builder with CRM integration, personalized mobile-first layouts, inventory highlights, and financing CTAs that make calling easy.</p>
+                    <h3 data-i18n="product.feature.website.title">Website that sells</h3>
+                    <p data-i18n="product.feature.website.desc">Car dealership website builder with CRM integration, personalized mobile-first layouts, inventory highlights, and financing CTAs that make calling easy.</p>
                 </div>
                 <div class="feature">
                     <div class="card-icon" aria-label="Megaphone icon">
@@ -386,8 +438,8 @@
                             <path d="M11.6 16.8a3 3 0 11-5.8-1.6"></path>
                         </svg>
                     </div>
-                    <h3>Marketplace automation</h3>
-                    <p>AI writes listings, optimizes photos, and posts to Facebook Marketplace so you stay visible.</p>
+                    <h3 data-i18n="product.feature.marketplace.title">Marketplace automation</h3>
+                    <p data-i18n="product.feature.marketplace.desc">AI writes listings, optimizes photos, and posts to Facebook Marketplace so you stay visible.</p>
                 </div>
                 <div class="feature">
                     <div class="card-icon" aria-label="Contact card icon">
@@ -398,8 +450,8 @@
                             <path d="M16 3.13a4 4 0 010 7.75"></path>
                         </svg>
                     </div>
-                    <h3>Follow-up system</h3>
-                    <p>Assignments, reminders, SMS/email notes, and nudges so every inquiry has an owner and a next step.</p>
+                    <h3 data-i18n="product.feature.followup.title">Follow-up system</h3>
+                    <p data-i18n="product.feature.followup.desc">Assignments, reminders, SMS/email notes, and nudges so every inquiry has an owner and a next step.</p>
                 </div>
                 <div class="feature">
                     <div class="card-icon" aria-label="Chart icon">
@@ -409,87 +461,87 @@
                             <line x1="6" y1="20" x2="6" y2="16"></line>
                         </svg>
                     </div>
-                    <h3>Performance tracking</h3>
-                    <p>Dashboards for sales, leads, inventory, and user management to keep the team accountable.</p>
+                    <h3 data-i18n="product.feature.performance.title">Performance tracking</h3>
+                    <p data-i18n="product.feature.performance.desc">Dashboards for sales, leads, inventory, and user management to keep the team accountable.</p>
                 </div>
             </div>
         </section>
 
         <section id="why-choose">
             <div class="section-header">
-                <div class="eyebrow">Why LSV Auto Cloud</div>
-                <h2>Built for small dealer teams who want more sales, not more complexity.</h2>
-                <p>We're not another bloated enterprise platform. LSV Auto Cloud combines website, CRM, and AI automation in one affordable package designed for independent dealers.</p>
+                <div class="eyebrow" data-i18n="why.eyebrow">Why LSV Auto Cloud</div>
+                <h2 data-i18n="why.title">Built for small dealer teams who want more sales, not more complexity.</h2>
+                <p data-i18n="why.desc">We're not another bloated enterprise platform. LSV Auto Cloud combines website, CRM, and AI automation in one affordable package designed for independent dealers.</p>
             </div>
             <div class="why-grid">
                 <div class="why-card why-card-highlight">
                     <div class="why-icon">⚡</div>
-                    <h3>Launch in 20 days, not months</h3>
-                    <p>No drawn-out implementations or technical headaches. We handle setup, hosting, and integrations so you're live and selling fast.</p>
+                    <h3 data-i18n="why.card1.title">Launch in 20 days, not months</h3>
+                    <p data-i18n="why.card1.desc">No drawn-out implementations or technical headaches. We handle setup, hosting, and integrations so you're live and selling fast.</p>
                 </div>
                 <div class="why-card">
                     <div class="why-icon">💰</div>
-                    <h3>Transparent pricing, no surprises</h3>
-                    <p>We offer packages tailored to your needs. No hidden fees, no forced upgrades. Pay only for what you need as your dealership grows.</p>
+                    <h3 data-i18n="why.card2.title">Transparent pricing, no surprises</h3>
+                    <p data-i18n="why.card2.desc">We offer packages tailored to your needs. No hidden fees, no forced upgrades. Pay only for what you need as your dealership grows.</p>
                 </div>
                 <div class="why-card">
                     <div class="why-icon">🎯</div>
-                    <h3>Built for automotive, not adapted</h3>
-                    <p>Unlike generic website builders, we understand inventory feeds, trade-in forms, financing CTAs, and dealer-specific lead flows.</p>
+                    <h3 data-i18n="why.card3.title">Built for automotive, not adapted</h3>
+                    <p data-i18n="why.card3.desc">Unlike generic website builders, we understand inventory feeds, trade-in forms, financing CTAs, and dealer-specific lead flows.</p>
                 </div>
                 <div class="why-card">
                     <div class="why-icon">🤖</div>
-                    <h3>AI that actually helps you sell</h3>
-                    <p>Auto-post to Facebook Marketplace, draft follow-up messages, and get intelligent reminders—not just chatbots.</p>
+                    <h3 data-i18n="why.card4.title">AI that actually helps you sell</h3>
+                    <p data-i18n="why.card4.desc">Auto-post to Facebook Marketplace, draft follow-up messages, and get intelligent reminders—not just chatbots.</p>
                 </div>
                 <div class="why-card">
                     <div class="why-icon">📱</div>
-                    <h3>Mobile-first for today's buyers</h3>
-                    <p>Most shoppers browse on phones. Your site works beautifully on mobile with click-to-call and optimized layouts.</p>
+                    <h3 data-i18n="why.card5.title">Mobile-first for today's buyers</h3>
+                    <p data-i18n="why.card5.desc">Most shoppers browse on phones. Your site works beautifully on mobile with click-to-call and optimized layouts.</p>
                 </div>
                 <div class="why-card">
                     <div class="why-icon">🇨🇦</div>
-                    <h3>Montreal-based, North America-focused</h3>
-                    <p>Real support from our Canadian team. We understand US and Canadian markets, regulations, and dealer challenges.</p>
+                    <h3 data-i18n="why.card6.title">Montreal-based, North America-focused</h3>
+                    <p data-i18n="why.card6.desc">Real support from our Canadian team. We understand US and Canadian markets, regulations, and dealer challenges.</p>
                 </div>
             </div>
             <div class="why-comparison">
-                <h3>LSV Auto Cloud vs Traditional Dealer Platforms</h3>
+                <h3 data-i18n="comparison.title">LSV Auto Cloud vs Traditional Dealer Platforms</h3>
                 <div class="comparison-grid">
                     <div class="comparison-row comparison-header">
                         <div class="comparison-feature"></div>
-                        <div class="comparison-lsv">LSV Auto Cloud</div>
-                        <div class="comparison-other">Legacy Platforms</div>
+                        <div class="comparison-lsv" data-i18n="comparison.lsv">LSV Auto Cloud</div>
+                        <div class="comparison-other" data-i18n="comparison.other">Legacy Platforms</div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comparison-feature">Launch time</div>
-                        <div class="comparison-lsv"><span class="check">✓</span> 20 days average</div>
-                        <div class="comparison-other"><span class="cross">✗</span> 3-6 months</div>
+                        <div class="comparison-feature" data-i18n="comparison.feature.launch">Launch time</div>
+                        <div class="comparison-lsv" data-i18n="comparison.lsv.launch"><span class="check">✓</span> 20 days average</div>
+                        <div class="comparison-other" data-i18n="comparison.other.launch"><span class="cross">✗</span> 3-6 months</div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comparison-feature">Built-in CRM</div>
-                        <div class="comparison-lsv"><span class="check">✓</span> Included</div>
-                        <div class="comparison-other"><span class="cross">✗</span> Extra $200+/mo</div>
+                        <div class="comparison-feature" data-i18n="comparison.feature.crm">Built-in CRM</div>
+                        <div class="comparison-lsv" data-i18n="comparison.lsv.crm"><span class="check">✓</span> Included</div>
+                        <div class="comparison-other" data-i18n="comparison.other.crm"><span class="cross">✗</span> Extra $200+/mo</div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comparison-feature">AI automation</div>
-                        <div class="comparison-lsv"><span class="check">✓</span> Marketplace, listings, follow-ups</div>
-                        <div class="comparison-other"><span class="cross">✗</span> Basic or none</div>
+                        <div class="comparison-feature" data-i18n="comparison.feature.ai">AI automation</div>
+                        <div class="comparison-lsv" data-i18n="comparison.lsv.ai"><span class="check">✓</span> Marketplace, listings, follow-ups</div>
+                        <div class="comparison-other" data-i18n="comparison.other.ai"><span class="cross">✗</span> Basic or none</div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comparison-feature">Mobile optimization</div>
-                        <div class="comparison-lsv"><span class="check">✓</span> Mobile-first design</div>
-                        <div class="comparison-other"><span class="partial">~</span> Desktop-first (adapted)</div>
+                        <div class="comparison-feature" data-i18n="comparison.feature.mobile">Mobile optimization</div>
+                        <div class="comparison-lsv" data-i18n="comparison.lsv.mobile"><span class="check">✓</span> Mobile-first design</div>
+                        <div class="comparison-other" data-i18n="comparison.other.mobile"><span class="partial">~</span> Desktop-first (adapted)</div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comparison-feature">Support</div>
-                        <div class="comparison-lsv"><span class="check">✓</span> Direct team access</div>
-                        <div class="comparison-other"><span class="cross">✗</span> Ticketing system</div>
+                        <div class="comparison-feature" data-i18n="comparison.feature.support">Support</div>
+                        <div class="comparison-lsv" data-i18n="comparison.lsv.support"><span class="check">✓</span> Direct team access</div>
+                        <div class="comparison-other" data-i18n="comparison.other.support"><span class="cross">✗</span> Ticketing system</div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comparison-feature">Contract flexibility</div>
-                        <div class="comparison-lsv"><span class="check">✓</span> Month-to-month</div>
-                        <div class="comparison-other"><span class="cross">✗</span> 12-36 month lock-in</div>
+                        <div class="comparison-feature" data-i18n="comparison.feature.contract">Contract flexibility</div>
+                        <div class="comparison-lsv" data-i18n="comparison.lsv.contract"><span class="check">✓</span> Month-to-month</div>
+                        <div class="comparison-other" data-i18n="comparison.other.contract"><span class="cross">✗</span> 12-36 month lock-in</div>
                     </div>
                 </div>
             </div>
@@ -497,56 +549,90 @@
 
         <section id="platform">
             <div class="section-header">
-                <div class="eyebrow">Automation + insights</div>
-                <h2>AI listings, follow-up, and performance in one place.</h2>
-                <p>Publish Marketplace listings automatically, simplify follow-ups, and see the numbers that matter.</p>
+                <div class="eyebrow" data-i18n="platform.eyebrow">Automation + insights</div>
+                <h2 data-i18n="platform.title">AI listings, follow-up, and performance in one place.</h2>
+                <p data-i18n="platform.desc">Publish Marketplace listings automatically, simplify follow-ups, and see the numbers that matter.</p>
             </div>
             <div class="platform-grid">
                 <div class="platform-card">
-                    <strong>AI listing studio</strong>
-                    <p>Generate AI listing text from your automated inventory data, then polish specs and photos in seconds.</p>
+                    <strong data-i18n="platform.card1.title">AI listing studio</strong>
+                    <p data-i18n="platform.card1.desc">Generate AI listing text from your automated inventory data, then polish specs and photos in seconds.</p>
                 </div>
                 <div class="platform-card">
-                    <strong>Auto publishing</strong>
-                    <p>Auto-post inventory to Facebook Marketplace so your listings stay fresh without effort.</p>
+                    <strong data-i18n="platform.card2.title">Auto publishing</strong>
+                    <p data-i18n="platform.card2.desc">Auto-post inventory to Facebook Marketplace so your listings stay fresh without effort.</p>
                 </div>
                 <div class="platform-card">
-                    <strong>Advanced follow-up</strong>
-                    <p>Assignments, reminders, SMS/email notes, and nudges to keep every shopper moving.</p>
+                    <strong data-i18n="platform.card3.title">Advanced follow-up</strong>
+                    <p data-i18n="platform.card3.desc">Assignments, reminders, SMS/email notes, and nudges to keep every shopper moving.</p>
                 </div>
                 <div class="platform-card">
-                    <strong>Performance dashboard</strong>
-                    <p>Track sales, leads, inventory status, and user activity in one view.</p>
+                    <strong data-i18n="platform.card4.title">Performance dashboard</strong>
+                    <p data-i18n="platform.card4.desc">Track sales, leads, inventory status, and user activity in one view.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solutions">
+            <div class="section-header">
+                <div class="eyebrow" data-i18n="solutions.eyebrow">Solutions</div>
+                <h2 data-i18n="solutions.title">Built to rank for the searches dealers make.</h2>
+                <p data-i18n="solutions.desc">Automotive website builder, dealer CRM with website, lead routing, and Marketplace automation in one platform.</p>
+            </div>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <strong data-i18n="solutions.card1.title">Automotive website builder</strong>
+                    <p data-i18n="solutions.card1.desc">Launch a car dealership website fast with inventory pages, financing CTAs, and mobile-first design.</p>
+                </div>
+                <div class="platform-card">
+                    <strong data-i18n="solutions.card2.title">Car dealer website builder</strong>
+                    <p data-i18n="solutions.card2.desc">Purpose-built templates and CRM hooks so dealers convert more web traffic into calls and appointments.</p>
+                </div>
+                <div class="platform-card">
+                    <strong data-i18n="solutions.card3.title">Dealer CRM with website</strong>
+                    <p data-i18n="solutions.card3.desc">Integrated CRM, lead routing, and reminders tied directly to your website forms and calls.</p>
+                </div>
+                <div class="platform-card">
+                    <strong data-i18n="solutions.card4.title">Facebook Marketplace auto posting</strong>
+                    <p data-i18n="solutions.card4.desc">Auto-post inventory to Marketplace and keep listings refreshed with AI vehicle listing tools.</p>
+                </div>
+                <div class="platform-card">
+                    <strong data-i18n="solutions.card5.title">Dealer lead management system</strong>
+                    <p data-i18n="solutions.card5.desc">Assign leads, capture notes, and trigger follow-ups automatically so every inquiry has an owner.</p>
+                </div>
+                <div class="platform-card">
+                    <strong data-i18n="solutions.card6.title">Serving Canada & US dealers</strong>
+                    <p data-i18n="solutions.card6.desc">Montreal-based team supporting car dealers across Canada and the US with local-ready sites.</p>
                 </div>
             </div>
         </section>
 
         <section id="process">
             <div class="section-header">
-                <div class="eyebrow">How it works</div>
-                <h2>Simple rollout designed for busy automotive teams.</h2>
-                <p>We do the heavy lifting and keep your team focused on the next conversation.</p>
+                <div class="eyebrow" data-i18n="process.eyebrow">How it works</div>
+                <h2 data-i18n="process.title">Simple rollout designed for busy automotive teams.</h2>
+                <p data-i18n="process.desc">We do the heavy lifting and keep your team focused on the next conversation.</p>
             </div>
             <div class="process-grid">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div>
-                        <h3>Show us your brand</h3>
-                        <p>Share your logo, vehicles, and priorities. We draft your homepage and key landing pages.</p>
+                        <h3 data-i18n="process.step1.title">Show us your brand</h3>
+                        <p data-i18n="process.step1.desc">Share your logo, vehicles, and priorities. We draft your homepage and key landing pages.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div>
-                        <h3>Launch in days</h3>
-                        <p>We set up hosting, lead capture, and routing rules so every inquiry has an owner.</p>
+                        <h3 data-i18n="process.step2.title">Launch in days</h3>
+                        <p data-i18n="process.step2.desc">We set up hosting, lead capture, and routing rules so every inquiry has an owner.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div>
-                        <h3>Work every lead</h3>
-                        <p>Your team uses the lead desk to log calls, add notes, and keep reminders moving.</p>
+                        <h3 data-i18n="process.step3.title">Work every lead</h3>
+                        <p data-i18n="process.step3.desc">Your team uses the lead desk to log calls, add notes, and keep reminders moving.</p>
                     </div>
                 </div>
             </div>
@@ -554,72 +640,72 @@
 
         <section id="proof">
             <div class="section-header">
-                <div class="eyebrow">Dealer proof</div>
-                <h2>Real lift for small dealer teams</h2>
-                <p>Based on early LSV, golf cart, and independent auto dealers after launch.</p>
+                <div class="eyebrow" data-i18n="proof.eyebrow">Dealer proof</div>
+                <h2 data-i18n="proof.title">Real lift for small dealer teams</h2>
+                <p data-i18n="proof.desc">Based on early LSV, golf cart, and independent auto dealers after launch.</p>
             </div>
             <div class="proof-grid">
                 <div class="stat-card">
-                    <strong>22% faster replies in 30 days</strong>
-                    <span class="stat-desc">Average first-response time across web leads after setup.</span>
-                    <span class="because">Because unified inbox and notifications.</span>
+                    <strong data-i18n="proof.stat1.title">22% faster replies in 30 days</strong>
+                    <span class="stat-desc" data-i18n="proof.stat1.desc">Average first-response time across web leads after setup.</span>
+                    <span class="because" data-i18n="proof.stat1.because">Because unified inbox and notifications.</span>
                 </div>
                 <div class="stat-card">
-                    <strong>15% more booked appointments in 60 days</strong>
-                    <span class="stat-desc">For service and test drives from web and phone leads.</span>
-                    <span class="because">Because lead routing and lead ownership.</span>
+                    <strong data-i18n="proof.stat2.title">15% more booked appointments in 60 days</strong>
+                    <span class="stat-desc" data-i18n="proof.stat2.desc">For service and test drives from web and phone leads.</span>
+                    <span class="because" data-i18n="proof.stat2.because">Because lead routing and lead ownership.</span>
                 </div>
                 <div class="quote-card">
-                    <p>“We can see which ads drive calls, so we double down fast.”</p>
-                    <strong>Owner, 50-vehicle independent dealer, Midwest</strong>
+                    <p data-i18n="proof.quote.text">“We can see which ads drive calls, so we double down fast.”</p>
+                    <strong data-i18n="proof.quote.attribution">Owner, 50-vehicle independent dealer, Midwest</strong>
                 </div>
             </div>
-            <p class="micro-cta">Want to compare your numbers? <a href="#book-demo">Book a Demo.</a></p>
+            <p class="micro-cta" data-i18n="proof.microCta">Want to compare your numbers? <a href="#book-demo">Book a Demo.</a></p>
         </section>
 
         <section id="book-demo" class="demo-section">
             <div class="section-header">
-                <div class="eyebrow">Book a demo</div>
-                <h2>See LSV Auto Cloud in action</h2>
-                <p>Pick a 30-minute slot to walk through the dealer website, CRM, and Marketplace automation. <strong>No credit card required.</strong></p>
+                <div class="eyebrow" data-i18n="demo.eyebrow">Book a demo</div>
+                <h2 data-i18n="demo.title">See LSV Auto Cloud in action</h2>
+                <p data-i18n="demo.desc">Pick a 30-minute slot to walk through the dealer website, CRM, and Marketplace automation. <strong>No credit card required.</strong></p>
             </div>
-            <div class="demo-embed" id="cal-inline-30min" aria-label="Schedule a demo"></div>
+            <div class="demo-embed" id="cal-inline-30min" aria-label="Schedule a demo" data-i18n="demo.ariaLabel" data-i18n-attr="aria-label" data-i18n-skip-text="true"></div>
         </section>
 
         <section id="contact">
             <div class="contact-section">
                 <div class="contact-form">
                     <div class="contact-form-header">
-                        <div class="eyebrow">Get in touch</div>
-                        <h2>Let's build something exceptional together.</h2>
-                        <p>Share your vision with us, and our team will reach out to discuss how we can bring your dealership's digital presence to life.</p>
+                        <div class="eyebrow" data-i18n="contact.eyebrow">Get in touch</div>
+                        <h2 data-i18n="contact.title">Let's build something exceptional together.</h2>
+                        <p data-i18n="contact.desc">Share your vision with us, and our team will reach out to discuss how we can bring your dealership's digital presence to life.</p>
                     </div>
                     <form id="contact-form" method="post" action="/api/contact" novalidate>
                         <div class="form-row">
                             <div>
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                                <label for="name" data-i18n="form.name.label">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" data-i18n="form.name.placeholder" data-i18n-attr="placeholder" required>
                             </div>
                             <div>
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="you@business.com" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div>
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" inputmode="tel" pattern="\(\d{3}\) \d{3}-\d{4}" required>
-                            </div>
-                            <div>
-                                <label for="business">Business</label>
-                                <input type="text" id="business" name="business" placeholder="Your business" required>
+                                <label for="email" data-i18n="form.email.label">Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@business.com" data-i18n="form.email.placeholder" data-i18n-attr="placeholder" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div>
-                                <label for="size">Team size</label>
+                                <label for="phone" data-i18n="form.phone.label">Phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" inputmode="tel" pattern="\(\d{3}\) \d{3}-\d{4}" data-i18n="form.phone.placeholder" data-i18n-attr="placeholder" required>
+                            </div>
+                            <div>
+                                <label for="business" data-i18n="form.business.label">Business</label>
+                                <input type="text" id="business" name="business" placeholder="Your business" data-i18n="form.business.placeholder" data-i18n-attr="placeholder" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div>
+                                <label for="size" data-i18n="form.size.label">Team size</label>
                                 <select id="size" name="size" required>
-                                    <option value="">Select...</option>
+                                    <option value="" data-i18n="form.size.placeholder">Select...</option>
                                     <option value="1-5">1-5</option>
                                     <option value="6-15">6-15</option>
                                     <option value="16-30">16-30</option>
@@ -632,11 +718,11 @@
                             </div>
                         </div>
                         <div>
-                            <label for="message">What do you want to improve?</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Faster site, better follow-up, campaign pages..." required></textarea>
+                            <label for="message" data-i18n="form.message.label">What do you want to improve?</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your dealership and what you need..." data-i18n="form.message.placeholder" data-i18n-attr="placeholder" data-i18n-skip-text="true" required></textarea>
                         </div>
-                        <p class="form-privacy">By submitting this form, you agree to be contacted by LSV Auto Cloud. We respect your privacy and will never share your information.</p>
-                        <button class="btn btn-primary" type="submit">Send message</button>
+                        <p class="form-privacy" data-i18n="form.privacy">By submitting this form, you agree to be contacted by LSV Auto Cloud. We respect your privacy and will never share your information.</p>
+                        <button class="btn btn-primary" type="submit" data-i18n="form.submit">Send message</button>
                         <div class="form-status" id="form-status" aria-live="polite"></div>
                     </form>
                 </div>
@@ -647,44 +733,44 @@
     <footer class="site-footer">
         <div class="container footer-inner">
             <div class="footer-left">
-                <span class="footer-copy">© <span id="footer-year">2025</span> LSV Auto Cloud. All rights reserved.</span>
-                <a class="footer-link" href="/privacy.html">Privacy Policy</a>
-                <a class="footer-link" href="/terms.html">Terms &amp; Conditions</a>
+                <span class="footer-copy" data-i18n="footer.copy">© <span id="footer-year">2025</span> LSV Auto Cloud. All rights reserved.</span>
+                <a class="footer-link" href="/privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                <a class="footer-link" href="/terms.html" data-i18n="footer.terms">Terms &amp; Conditions</a>
             </div>
             <a class="footer-powered" href="https://www.lsvautocloud.com" target="_blank" rel="noopener" aria-label="LSV Auto Cloud">
                 <img src="logo.png" alt="LSV Auto Cloud dealer website builder with CRM logo" width="200" height="60" loading="lazy">
-                Powered by LSV Auto Cloud
+                <span data-i18n="footer.powered">Powered by LSV Auto Cloud</span>
             </a>
         </div>
     </footer>
     <div class="modal-backdrop" id="success-backdrop" aria-hidden="true"></div>
     <div class="modal" id="success-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="success-title">
         <div class="modal-card">
-            <h3 id="success-title">Message sent</h3>
-            <p>Thanks! We received your request and will reply within one business day.</p>
-            <button class="btn btn-primary" id="success-close" type="button">Close</button>
+            <h3 id="success-title" data-i18n="modal.title">Message sent</h3>
+            <p data-i18n="modal.body">Thanks! We received your request and will reply within one business day.</p>
+            <button class="btn btn-primary" id="success-close" type="button" data-i18n="modal.close">Close</button>
         </div>
     </div>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top" type="button">
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top" data-i18n-attr="aria-label" data-i18n="backToTop" data-i18n-skip-text="true" type="button">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
 
     <!-- Mobile Sticky CTA -->
-    <a href="#book-demo" class="mobile-sticky-cta" id="mobile-sticky-cta" aria-label="Book a demo">
+    <a href="#book-demo" class="mobile-sticky-cta" id="mobile-sticky-cta" aria-label="Book a demo" data-i18n="cta.bookDemo" data-i18n-attr="aria-label">
         Book a Demo
     </a>
 
     <!-- Cookie Consent Banner -->
-    <div class="cookie-consent" id="cookie-consent" aria-live="polite" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-consent" id="cookie-consent" aria-live="polite" role="dialog" aria-label="Cookie consent" data-i18n="cookie.ariaLabel" data-i18n-attr="aria-label" data-i18n-skip-text="true">
         <div class="cookie-content">
-            <p><strong>We use cookies</strong> to improve your experience and analyze site traffic. By continuing, you accept our use of cookies.</p>
+            <p data-i18n="cookie.message"><strong>We use cookies</strong> to improve your experience and analyze site traffic. By continuing, you accept our use of cookies.</p>
             <div class="cookie-actions">
-                <button class="btn btn-primary" id="accept-cookies" type="button">Accept</button>
-                <button class="btn btn-secondary" id="decline-cookies" type="button">Decline</button>
+                <button class="btn btn-primary" id="accept-cookies" type="button" data-i18n="cookie.accept">Accept</button>
+                <button class="btn btn-secondary" id="decline-cookies" type="button" data-i18n="cookie.decline">Decline</button>
             </div>
         </div>
     </div>

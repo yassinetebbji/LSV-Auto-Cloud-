@@ -1,5 +1,6 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
+const path = require('path');
 require('dotenv').config({ path: '.env.local' });
 
 const app = express();
@@ -8,6 +9,13 @@ const port = process.env.PORT || 3000;
 app.use(express.json({ limit: '32kb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
+
+const serveStaticPage = (fileName) => (req, res) => {
+    res.sendFile(path.join(__dirname, fileName));
+};
+
+app.get(['/privacy', '/privacy.html'], serveStaticPage('privacy.html'));
+app.get(['/terms', '/terms.html'], serveStaticPage('terms.html'));
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
