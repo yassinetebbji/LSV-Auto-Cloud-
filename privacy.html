@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | LSV Auto Cloud</title>
-    <meta name="description" content="Privacy policy for LSV Auto Cloud. Learn what information we collect, how we use it, and your choices.">
+    <meta name="description" content="Privacy policy for LSV Auto Cloud. Learn what information we collect, how we use it, and your rights under Quebec Law 25.">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://www.lsvautocloud.com/privacy.html">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <div class="container legal-page">
@@ -23,62 +24,158 @@
                 <img class="brand-logo" src="logo.png" alt="LSV Auto Cloud logo">
             </a>
             <div class="legal-meta">
-                <span class="legal-updated">Last updated: 2026-01-06</span>
+                <button class="lang-toggle" data-role="lang-toggle" type="button" aria-label="Switch language">EN</button>
+                <span class="legal-updated" data-i18n="privacy.lastUpdated">Last updated: 2026-01-09</span>
             </div>
         </header>
 
         <main class="legal-card">
-            <h1>Privacy Policy</h1>
-            <p>LSV Auto Cloud (&quot;we&quot; or &quot;us&quot;) provides automotive website and CRM services. This Privacy Policy explains what information we collect, how we use it, and the choices you have.</p>
+            <h1 data-i18n="privacy.title">Privacy Policy</h1>
+            <p data-i18n="privacy.intro">LSV Auto Cloud ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information in compliance with Quebec's Act respecting the protection of personal information in the private sector (Law 25), Canada's Personal Information Protection and Electronic Documents Act (PIPEDA), and other applicable privacy laws.</p>
 
-            <h2>Information we collect</h2>
+            <h2 data-i18n="privacy.scope.title">Scope and application</h2>
+            <p data-i18n="privacy.scope.desc">This Privacy Policy applies to personal information collected through our website (lsvautocloud.com), our automotive website builder and CRM platform ("Services"), and all related interactions with LSV Auto Cloud. By using our Services, you consent to the collection and use of information as described in this Policy.</p>
+
+            <h2 data-i18n="privacy.responsible.title">Responsible party</h2>
+            <p data-i18n="privacy.responsible.desc">LSV Auto Cloud, located in Montreal, Quebec, Canada, is the data controller responsible for your personal information. For privacy-related inquiries, contact us at <a href="mailto:support@lsvautocloud.com">support@lsvautocloud.com</a>.</p>
+
+            <h2 data-i18n="privacy.collect.title">Information we collect</h2>
+
+            <h3 data-i18n="privacy.collect.website.title">Website visitors</h3>
             <ul>
-                <li><strong>Contact form data:</strong> name, email, phone number, business, team size, and the message you provide.</li>
-                <li><strong>Demo bookings:</strong> when you schedule through Cal.com, we receive booking details (name, email, selected time, notes). Cal.com may collect additional data under their own privacy terms.</li>
-                <li><strong>Usage and device data:</strong> through Google Analytics (GA4) we receive information such as pages viewed, referrers, approximate location, and device/browser details. GA4 uses cookies and similar technologies.</li>
-                <li><strong>Communications:</strong> emails or calls you send to us.</li>
+                <li data-i18n="privacy.collect.website.item1"><strong>Contact form data:</strong> Name, email address, phone number, business name, team size, and message content when you submit inquiries.</li>
+                <li data-i18n="privacy.collect.website.item2"><strong>Demo bookings:</strong> Name, email address, phone number, and selected time slot when you schedule a demo through Cal.com (subject to Cal.com's privacy policy).</li>
+                <li data-i18n="privacy.collect.website.item3"><strong>Analytics data:</strong> Through Google Analytics 4 (GA4), we collect IP address (anonymized), pages viewed, referral sources, approximate geographic location, device type, browser information, and session duration.</li>
+                <li data-i18n="privacy.collect.website.item4"><strong>Cookies and tracking:</strong> Session cookies, preference cookies (language selection), and analytics cookies. See our Cookies section below.</li>
             </ul>
 
-            <h2>How we use information</h2>
+            <h3 data-i18n="privacy.collect.customers.title">Service customers (dealers)</h3>
             <ul>
-                <li>Provide and improve our website and services.</li>
-                <li>Respond to inquiries, schedule demos, and deliver requested information.</li>
-                <li>Send service-related updates or marketing (you can opt out of marketing at any time).</li>
-                <li>Analyze site performance and improve user experience.</li>
-                <li>Protect against fraud, abuse, or security risks, and comply with legal obligations.</li>
+                <li data-i18n="privacy.collect.customers.item1"><strong>Account information:</strong> Business name, contact person name, email address, phone number, billing address, payment information (processed securely through third-party payment processors).</li>
+                <li data-i18n="privacy.collect.customers.item2"><strong>Platform usage data:</strong> Login credentials, user activity logs, feature usage statistics, CRM data you input (customer names, contact details, vehicle preferences, notes), inventory data (vehicle listings, photos, descriptions), website content you create.</li>
+                <li data-i18n="privacy.collect.customers.item3"><strong>Communication records:</strong> Emails, support tickets, phone call records, and chat messages with our team.</li>
+                <li data-i18n="privacy.collect.customers.item4"><strong>Technical data:</strong> IP addresses, browser type, operating system, access times, and usage patterns for security and service improvement.</li>
             </ul>
 
-            <h2>Sharing of information</h2>
+            <h3 data-i18n="privacy.collect.end.title">End-user data (your customers)</h3>
+            <p data-i18n="privacy.collect.end.desc">When you use our CRM and lead management features, you may collect personal information about your customers (end-users). You are the data controller for this information, and we act as a data processor. You are responsible for complying with applicable privacy laws when collecting and using this data, including obtaining necessary consents and providing privacy notices to your customers.</p>
+
+            <h2 data-i18n="privacy.legal.title">Legal basis for processing</h2>
+            <p data-i18n="privacy.legal.intro">Under Quebec Law 25, we process your personal information based on the following legal grounds:</p>
             <ul>
-                <li><strong>Service providers:</strong> vendors who help us operate the site and deliver services (e.g., hosting, email, analytics, scheduling via Cal.com). They access data only to perform services for us.</li>
-                <li><strong>Legal and safety:</strong> if required by law or to protect rights, safety, or security.</li>
-                <li><strong>Business transfers:</strong> in a merger, acquisition, or asset sale, information may transfer as part of the transaction.</li>
+                <li data-i18n="privacy.legal.item1"><strong>Consent:</strong> When you submit contact forms, book demos, or create an account, you provide express consent for us to collect and use your information.</li>
+                <li data-i18n="privacy.legal.item2"><strong>Contract performance:</strong> Processing is necessary to provide the Services you have subscribed to, including website hosting, CRM functionality, and support.</li>
+                <li data-i18n="privacy.legal.item3"><strong>Legal obligations:</strong> We process information to comply with tax, accounting, anti-fraud, and other legal requirements.</li>
+                <li data-i18n="privacy.legal.item4"><strong>Legitimate interests:</strong> We process information for business purposes such as improving our Services, security monitoring, and analytics, provided these interests do not override your privacy rights.</li>
             </ul>
 
-            <h2>Cookies and tracking</h2>
-            <p>We use cookies and similar technologies for analytics and site functionality. You can manage cookies in your browser settings; disabling cookies may affect some site features.</p>
-
-            <h2>Data retention</h2>
-            <p>We retain information as long as needed for the purposes above, to meet legal obligations, or to resolve disputes. We delete or anonymize data when it is no longer necessary.</p>
-
-            <h2>Your choices</h2>
+            <h2 data-i18n="privacy.use.title">How we use information</h2>
             <ul>
-                <li><strong>Marketing opt-out:</strong> you can opt out of marketing emails using the unsubscribe link or by contacting us.</li>
-                <li><strong>Analytics controls:</strong> manage cookies in your browser or use tools like Google’s opt-out add-on for GA.</li>
-                <li><strong>Access, update, delete:</strong> you may request access to, correction of, or deletion of your personal information, subject to applicable law.</li>
+                <li data-i18n="privacy.use.item1"><strong>Service delivery:</strong> Provide, maintain, and improve our platform, including website building, CRM, lead routing, Facebook Marketplace automation, and AI-powered features.</li>
+                <li data-i18n="privacy.use.item2"><strong>Customer support:</strong> Respond to inquiries, troubleshoot issues, and provide technical assistance.</li>
+                <li data-i18n="privacy.use.item3"><strong>Billing and payments:</strong> Process subscription fees, send invoices, and manage payment records.</li>
+                <li data-i18n="privacy.use.item4"><strong>Communications:</strong> Send service-related notifications, updates, maintenance alerts, and respond to your requests.</li>
+                <li data-i18n="privacy.use.item5"><strong>Marketing:</strong> With your consent, send promotional emails about new features, updates, or offers. You may opt out at any time.</li>
+                <li data-i18n="privacy.use.item6"><strong>Analytics and improvement:</strong> Analyze usage patterns to improve functionality, user experience, and develop new features.</li>
+                <li data-i18n="privacy.use.item7"><strong>Security and fraud prevention:</strong> Detect, prevent, and respond to security incidents, fraud, and violations of our Terms of Service.</li>
+                <li data-i18n="privacy.use.item8"><strong>Legal compliance:</strong> Comply with applicable laws, regulations, legal processes, and enforceable governmental requests.</li>
             </ul>
 
-            <h2>International transfers</h2>
-            <p>We operate from Canada and may process data in other countries where our service providers are located. We take steps to protect data in accordance with this Policy.</p>
+            <h2 data-i18n="privacy.sharing.title">Information sharing and disclosure</h2>
+            <p data-i18n="privacy.sharing.intro">We do not sell your personal information. We share information only in the following circumstances:</p>
 
-            <h2>Children</h2>
-            <p>Our services are not directed to children under 16. We do not knowingly collect information from children under 16.</p>
+            <h3 data-i18n="privacy.sharing.providers.title">Service providers</h3>
+            <p data-i18n="privacy.sharing.providers.desc">We engage trusted third-party service providers to support our operations. These providers have access to personal information only to perform services on our behalf and are contractually obligated to protect your information:</p>
+            <ul>
+                <li data-i18n="privacy.sharing.providers.item1"><strong>Hosting and infrastructure:</strong> Cloud hosting providers for data storage and platform operation.</li>
+                <li data-i18n="privacy.sharing.providers.item2"><strong>Analytics:</strong> Google Analytics for website usage analysis.</li>
+                <li data-i18n="privacy.sharing.providers.item3"><strong>Scheduling:</strong> Cal.com for demo appointment booking.</li>
+                <li data-i18n="privacy.sharing.providers.item4"><strong>Payment processing:</strong> Secure payment processors for subscription billing (they do not share full payment details with us).</li>
+                <li data-i18n="privacy.sharing.providers.item5"><strong>Email and communications:</strong> Email service providers for transactional and marketing communications.</li>
+                <li data-i18n="privacy.sharing.providers.item6"><strong>Customer support:</strong> Support ticketing and communication platforms.</li>
+            </ul>
 
-            <h2>Changes to this policy</h2>
-            <p>We may update this Privacy Policy from time to time. The &quot;Last updated&quot; date will reflect the most recent changes.</p>
+            <h3 data-i18n="privacy.sharing.legal.title">Legal requirements and protection</h3>
+            <p data-i18n="privacy.sharing.legal.desc">We may disclose information if required by law, court order, legal process, or governmental request, or when necessary to protect our rights, property, safety, or that of our users or the public.</p>
 
-            <h2>Contact</h2>
-            <p>If you have questions or requests, contact us at <a href="mailto:contact@lsvautocloud.com">contact@lsvautocloud.com</a>.</p>
+            <h3 data-i18n="privacy.sharing.business.title">Business transfers</h3>
+            <p data-i18n="privacy.sharing.business.desc">In the event of a merger, acquisition, reorganization, or sale of assets, personal information may be transferred as part of the transaction. We will notify you of any such change and your choices regarding your information.</p>
+
+            <h2 data-i18n="privacy.international.title">International transfers</h2>
+            <p data-i18n="privacy.international.desc">We operate primarily in Canada, but some of our service providers may be located in other countries, including the United States. When we transfer personal information outside of Quebec or Canada, we ensure appropriate safeguards are in place, such as standard contractual clauses, to protect your information in accordance with Quebec Law 25 and applicable privacy laws.</p>
+
+            <h2 data-i18n="privacy.security.title">Data security</h2>
+            <p data-i18n="privacy.security.intro">We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, disclosure, alteration, or destruction, including:</p>
+            <ul>
+                <li data-i18n="privacy.security.item1"><strong>Encryption:</strong> Data in transit is encrypted using TLS/SSL protocols. Sensitive data at rest is encrypted.</li>
+                <li data-i18n="privacy.security.item2"><strong>Access controls:</strong> Role-based access controls and authentication mechanisms limit access to personal information to authorized personnel only.</li>
+                <li data-i18n="privacy.security.item3"><strong>Security monitoring:</strong> Regular security audits, vulnerability assessments, and monitoring for suspicious activity.</li>
+                <li data-i18n="privacy.security.item4"><strong>Employee training:</strong> Staff are trained on privacy and security practices and are bound by confidentiality obligations.</li>
+                <li data-i18n="privacy.security.item5"><strong>Incident response:</strong> We maintain an incident response plan to detect, respond to, and report security breaches as required by law.</li>
+            </ul>
+            <p data-i18n="privacy.security.breach">In the event of a data breach that poses a risk of serious harm, we will notify affected individuals and the Commission d'accès à l'information du Québec (CAI) as required by Quebec Law 25.</p>
+
+            <h2 data-i18n="privacy.retention.title">Data retention</h2>
+            <p data-i18n="privacy.retention.desc">We retain personal information only as long as necessary to fulfill the purposes for which it was collected, comply with legal obligations, resolve disputes, and enforce our agreements. Specific retention periods include:</p>
+            <ul>
+                <li data-i18n="privacy.retention.item1"><strong>Active customer accounts:</strong> For the duration of your subscription and for a reasonable period afterward to address support issues or legal obligations.</li>
+                <li data-i18n="privacy.retention.item2"><strong>Cancelled accounts:</strong> We retain certain data for up to 30 days after cancellation to facilitate data export requests, then delete or anonymize it unless required by law.</li>
+                <li data-i18n="privacy.retention.item3"><strong>Financial records:</strong> Billing and payment information is retained for 7 years to comply with tax and accounting regulations.</li>
+                <li data-i18n="privacy.retention.item4"><strong>Marketing data:</strong> Contact information for marketing purposes is retained until you opt out or request deletion.</li>
+                <li data-i18n="privacy.retention.item5"><strong>Analytics data:</strong> Aggregated and anonymized analytics data may be retained indefinitely for statistical purposes.</li>
+            </ul>
+
+            <h2 data-i18n="privacy.cookies.title">Cookies and tracking technologies</h2>
+            <p data-i18n="privacy.cookies.intro">We use cookies and similar tracking technologies to operate our website and Services:</p>
+            <ul>
+                <li data-i18n="privacy.cookies.item1"><strong>Essential cookies:</strong> Required for website functionality, authentication, and security. These cannot be disabled.</li>
+                <li data-i18n="privacy.cookies.item2"><strong>Preference cookies:</strong> Store your language selection and other preferences.</li>
+                <li data-i18n="privacy.cookies.item3"><strong>Analytics cookies:</strong> Google Analytics cookies help us understand how visitors use our site. These are set only with your consent via our cookie banner.</li>
+            </ul>
+            <p data-i18n="privacy.cookies.control">You can manage cookies through your browser settings. Disabling cookies may affect some features of our website. To opt out of Google Analytics, you can use the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+            <h2 data-i18n="privacy.rights.title">Your privacy rights</h2>
+            <p data-i18n="privacy.rights.intro">Under Quebec Law 25 and Canadian privacy laws, you have the following rights regarding your personal information:</p>
+            <ul>
+                <li data-i18n="privacy.rights.item1"><strong>Right to access:</strong> Request confirmation of what personal information we hold about you and obtain a copy.</li>
+                <li data-i18n="privacy.rights.item2"><strong>Right to rectification:</strong> Request correction of inaccurate or incomplete personal information.</li>
+                <li data-i18n="privacy.rights.item3"><strong>Right to deletion:</strong> Request deletion of your personal information, subject to legal retention requirements.</li>
+                <li data-i18n="privacy.rights.item4"><strong>Right to data portability:</strong> Request a copy of your personal information in a structured, commonly used, machine-readable format.</li>
+                <li data-i18n="privacy.rights.item5"><strong>Right to withdraw consent:</strong> Withdraw consent for processing based on consent at any time (this does not affect the lawfulness of processing before withdrawal).</li>
+                <li data-i18n="privacy.rights.item6"><strong>Right to object:</strong> Object to processing of your personal information for direct marketing or based on legitimate interests.</li>
+                <li data-i18n="privacy.rights.item7"><strong>Right to restrict processing:</strong> Request limitation of processing in certain circumstances.</li>
+                <li data-i18n="privacy.rights.item8"><strong>Right to lodge a complaint:</strong> File a complaint with the Commission d'accès à l'information du Québec (CAI) if you believe your privacy rights have been violated.</li>
+            </ul>
+            <p data-i18n="privacy.rights.exercise">To exercise any of these rights, contact us at <a href="mailto:support@lsvautocloud.com">support@lsvautocloud.com</a>. We will respond to your request within 30 days as required by law. We may ask you to verify your identity before processing your request.</p>
+
+            <h2 data-i18n="privacy.marketing.title">Marketing communications and opt-out</h2>
+            <p data-i18n="privacy.marketing.desc">If you receive marketing emails from us, you can opt out at any time by clicking the "unsubscribe" link in the email or by contacting us at <a href="mailto:support@lsvautocloud.com">support@lsvautocloud.com</a>. Note that even if you opt out of marketing communications, we will still send you transactional and service-related messages necessary for your use of our Services.</p>
+
+            <h2 data-i18n="privacy.automated.title">Automated decision-making</h2>
+            <p data-i18n="privacy.automated.desc">Our Services include AI-powered features such as automated vehicle listing generation and communication suggestions. These features provide recommendations and suggestions for your review and approval. We do not use automated decision-making that produces legal effects or similarly significant effects concerning you without human involvement.</p>
+
+            <h2 data-i18n="privacy.children.title">Children's privacy</h2>
+            <p data-i18n="privacy.children.desc">Our Services are not directed to individuals under the age of 16, and we do not knowingly collect personal information from children under 16. If we become aware that we have collected personal information from a child under 16 without parental consent, we will take steps to delete that information promptly.</p>
+
+            <h2 data-i18n="privacy.thirdparty.title">Third-party websites and services</h2>
+            <p data-i18n="privacy.thirdparty.desc">Our website and Services may contain links to third-party websites or integrate third-party services (such as Cal.com, Google Analytics, Facebook Marketplace). We are not responsible for the privacy practices of these third parties. We encourage you to review their privacy policies before providing them with personal information.</p>
+
+            <h2 data-i18n="privacy.changes.title">Changes to this privacy policy</h2>
+            <p data-i18n="privacy.changes.desc">We may update this Privacy Policy from time to time to reflect changes in our practices, Services, legal requirements, or for other operational, legal, or regulatory reasons. The "Last updated" date at the top of this page indicates when the Policy was last revised. We will notify you of material changes by email or through a prominent notice on our website at least 30 days before the changes take effect, as required by Quebec Law 25. Your continued use of our Services after changes take effect constitutes acceptance of the updated Policy.</p>
+
+            <h2 data-i18n="privacy.cai.title">Commission d'accès à l'information du Québec (CAI)</h2>
+            <p data-i18n="privacy.cai.desc">If you have concerns about how we handle your personal information or wish to file a complaint, you may contact the Commission d'accès à l'information du Québec (CAI):</p>
+            <p data-i18n="privacy.cai.contact">Commission d'accès à l'information du Québec<br>
+            Québec: 525, boul. René-Lévesque Est, bureau 1.20, Québec (Québec) G1R 5S9<br>
+            Montréal: 500, boul. René-Lévesque Ouest, bureau 10.200, Montréal (Québec) H2Z 1W7<br>
+            Telephone: 1-888-528-7741<br>
+            Website: <a href="https://www.cai.gouv.qc.ca" target="_blank" rel="noopener">www.cai.gouv.qc.ca</a></p>
+
+            <h2 data-i18n="privacy.contact.title">Contact us</h2>
+            <p data-i18n="privacy.contact.desc">If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:</p>
+            <p data-i18n="privacy.contact.info">LSV Auto Cloud<br>
+            Email: <a href="mailto:support@lsvautocloud.com">support@lsvautocloud.com</a><br>
+            Location: Montreal, Quebec, Canada</p>
         </main>
     </div>
 </body>

@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <div class="container legal-page">
@@ -23,61 +24,146 @@
                 <img class="brand-logo" src="logo.png" alt="LSV Auto Cloud logo">
             </a>
             <div class="legal-meta">
-                <span class="legal-updated">Last updated: 2026-01-06</span>
+                <button class="lang-toggle" data-role="lang-toggle" type="button" aria-label="Switch language">EN</button>
+                <span class="legal-updated" data-i18n="terms.lastUpdated">Last updated: 2026-01-09</span>
             </div>
         </header>
 
         <main class="legal-card">
-            <h1>Terms and Conditions</h1>
-            <p>These Terms and Conditions (&quot;Terms&quot;) govern your use of the LSV Auto Cloud website and services. By accessing or using our site or services, you agree to these Terms.</p>
+            <h1 data-i18n="terms.title">Terms and Conditions</h1>
+            <p data-i18n="terms.intro">These Terms and Conditions ("Terms") govern your use of the LSV Auto Cloud website and services. By accessing or using our site or services, you agree to these Terms.</p>
 
-            <h2>Use of services</h2>
+            <h2 data-i18n="terms.services.title">Services</h2>
+            <p data-i18n="terms.services.desc">LSV Auto Cloud provides automotive website building, dealer CRM, lead management, Facebook Marketplace automation, AI-powered vehicle listings, and related services ("Services"). Specific service features and availability may vary based on your selected package.</p>
+
+            <h2 data-i18n="terms.useOfServices.title">Use of services</h2>
             <ul>
-                <li>You must provide accurate information when submitting forms or booking demos.</li>
-                <li>You will comply with applicable laws and avoid misuse of the site (including attempting to disrupt, reverse engineer, or gain unauthorized access).</li>
+                <li data-i18n="terms.useOfServices.item1">You must provide accurate information when submitting forms, booking demos, or signing up for services.</li>
+                <li data-i18n="terms.useOfServices.item2">You will comply with applicable laws and avoid misuse of the site (including attempting to disrupt, reverse engineer, or gain unauthorized access).</li>
+                <li data-i18n="terms.useOfServices.item3">You are responsible for all activity conducted through your account.</li>
             </ul>
 
-            <h2>Accounts and security</h2>
+            <h2 data-i18n="terms.accounts.title">Accounts and security</h2>
             <ul>
-                <li>If we provide you with credentials to access any portal, you are responsible for keeping them secure and for activity under your account.</li>
-                <li>Notify us promptly of any unauthorized use or security concerns.</li>
+                <li data-i18n="terms.accounts.item1">If we provide you with credentials to access any portal or CRM, you are responsible for keeping them secure and for all activity under your account.</li>
+                <li data-i18n="terms.accounts.item2">You must notify us promptly of any unauthorized use or security concerns.</li>
+                <li data-i18n="terms.accounts.item3">We reserve the right to suspend accounts that violate these Terms or pose security risks.</li>
             </ul>
 
-            <h2>Intellectual property</h2>
+            <h2 data-i18n="terms.subscription.title">Subscription and payment terms</h2>
             <ul>
-                <li>The site, branding, and content are owned by LSV Auto Cloud or our licensors and are protected by law.</li>
-                <li>You may not copy, modify, or redistribute content except as allowed by these Terms or with our written permission.</li>
+                <li data-i18n="terms.subscription.item1">Services are provided on a subscription basis with pricing determined by your selected package.</li>
+                <li data-i18n="terms.subscription.item2">Payment is due according to the billing schedule agreed upon (typically monthly or annually).</li>
+                <li data-i18n="terms.subscription.item3">All fees are in CAD unless otherwise specified and are non-refundable except as required by law.</li>
+                <li data-i18n="terms.subscription.item4">We reserve the right to change pricing with 30 days notice to existing customers.</li>
+                <li data-i18n="terms.subscription.item5">Late payments may result in service suspension until account balance is current.</li>
+                <li data-i18n="terms.subscription.item6">You are responsible for all taxes associated with the Services.</li>
             </ul>
 
-            <h2>Customer content</h2>
+            <h2 data-i18n="terms.delivery.title">Service delivery and timelines</h2>
             <ul>
-                <li>If you provide content (e.g., inventory details, logos, copy) for your project, you grant us a limited license to use it to deliver services to you.</li>
-                <li>You are responsible for ensuring you have rights to the content you provide.</li>
+                <li data-i18n="terms.delivery.item1">We aim to launch new dealer websites within 20 business days of project kickoff, subject to timely provision of required materials (logos, content, inventory data) by you.</li>
+                <li data-i18n="terms.delivery.item2">Delivery timelines are estimates and may vary based on project complexity and your responsiveness.</li>
+                <li data-i18n="terms.delivery.item3">You agree to provide necessary content, feedback, and approvals within reasonable timeframes to avoid delays.</li>
+                <li data-i18n="terms.delivery.item4">Significant scope changes may require timeline and pricing adjustments.</li>
             </ul>
 
-            <h2>Third-party services</h2>
-            <p>Our site may integrate third-party services (e.g., Cal.com for scheduling, Google Analytics). Their terms and privacy policies govern your use of those services.</p>
+            <h2 data-i18n="terms.cancellation.title">Cancellation and refunds</h2>
+            <ul>
+                <li data-i18n="terms.cancellation.item1">Monthly subscriptions may be cancelled at any time with 30 days notice. Service will continue through the end of the current billing period.</li>
+                <li data-i18n="terms.cancellation.item2">Annual subscriptions may be cancelled with 30 days notice but are non-refundable for unused months.</li>
+                <li data-i18n="terms.cancellation.item3">Initial setup fees are non-refundable once work has commenced.</li>
+                <li data-i18n="terms.cancellation.item4">Upon cancellation, your website will be taken offline and you will lose access to the platform, CRM, and all hosted data.</li>
+                <li data-i18n="terms.cancellation.item5">You may request an export of your data (customer information, inventory records, website content) within 30 days of cancellation, subject to payment of all outstanding fees.</li>
+            </ul>
 
-            <h2>Disclaimers</h2>
-            <p>The site is provided &quot;as is&quot; without warranties of any kind. To the fullest extent permitted by law, we disclaim all implied warranties, including merchantability, fitness for a particular purpose, and non-infringement.</p>
+            <h2 data-i18n="terms.ip.title">Intellectual property</h2>
+            <ul>
+                <li data-i18n="terms.ip.item1">The LSV Auto Cloud platform, software, branding, and documentation are owned by LSV Auto Cloud or our licensors and are protected by law.</li>
+                <li data-i18n="terms.ip.item2">You may not copy, modify, or redistribute our software or platform except as allowed by these Terms or with our written permission.</li>
+                <li data-i18n="terms.ip.item3">You are expressly prohibited from copying, reverse engineering, decompiling, or attempting to extract source code from any websites created by LSV Auto Cloud, whether for your own use or for third parties.</li>
+                <li data-i18n="terms.ip.item4">We retain all rights to improvements, updates, and derivative works of our platform.</li>
+            </ul>
 
-            <h2>Limitation of liability</h2>
-            <p>To the extent permitted by law, LSV Auto Cloud will not be liable for indirect, incidental, special, consequential, or punitive damages, or for lost profits or revenues, arising from your use of the site. Our total liability for any claim arising from the site will not exceed one hundred USD (USD $100).</p>
+            <h2 data-i18n="terms.data.title">Customer content and data ownership</h2>
+            <ul>
+                <li data-i18n="terms.data.item1">You retain ownership of all content you provide (inventory details, logos, images, copy, customer data).</li>
+                <li data-i18n="terms.data.item2">You grant us a limited license to use your content to deliver Services to you, including hosting, display, and automation features.</li>
+                <li data-i18n="terms.data.item3">You are responsible for ensuring you have rights to all content you provide and that it does not violate any third-party rights.</li>
+                <li data-i18n="terms.data.item4">We will not sell or share your customer data with third parties except as required to provide Services or as required by law.</li>
+                <li data-i18n="terms.data.item5">Upon service termination, we will provide your data in standard formats within 30 days of your request.</li>
+            </ul>
 
-            <h2>Indemnity</h2>
-            <p>You agree to indemnify and hold LSV Auto Cloud harmless from claims or losses arising out of your misuse of the site or violation of these Terms.</p>
+            <h2 data-i18n="terms.ai.title">AI and automation features</h2>
+            <ul>
+                <li data-i18n="terms.ai.item1">Our AI features (including listing generation and customer communication assistance) are provided as tools to assist your business operations.</li>
+                <li data-i18n="terms.ai.item2">AI-generated content is provided as suggestions and should be reviewed before publication.</li>
+                <li data-i18n="terms.ai.item3">You are solely responsible for all content published through our Services, including AI-assisted content.</li>
+                <li data-i18n="terms.ai.item4">We do not guarantee the accuracy or appropriateness of AI-generated suggestions.</li>
+            </ul>
 
-            <h2>Termination</h2>
-            <p>We may suspend or terminate access to the site if you violate these Terms or for security or legal reasons.</p>
+            <h2 data-i18n="terms.thirdParty.title">Facebook Marketplace and third-party platforms</h2>
+            <ul>
+                <li data-i18n="terms.thirdParty.item1">Use of Facebook Marketplace auto-posting features requires compliance with Facebook's terms of service and policies.</li>
+                <li data-i18n="terms.thirdParty.item2">You are responsible for maintaining your Facebook account in good standing and for all content posted to Marketplace.</li>
+                <li data-i18n="terms.thirdParty.item3">We are not responsible for account suspensions, posting restrictions, or policy violations by third-party platforms.</li>
+                <li data-i18n="terms.thirdParty.item4">Changes to third-party platform APIs or policies may affect service availability without notice.</li>
+            </ul>
 
-            <h2>Changes</h2>
-            <p>We may update these Terms from time to time. The &quot;Last updated&quot; date reflects the most recent changes. Continued use after changes means you accept the updated Terms.</p>
+            <h2 data-i18n="terms.uptime.title">Service level and uptime</h2>
+            <ul>
+                <li data-i18n="terms.uptime.item1">We strive to maintain 99% uptime for our Services but do not guarantee uninterrupted availability.</li>
+                <li data-i18n="terms.uptime.item2">Scheduled maintenance will be communicated in advance when possible.</li>
+                <li data-i18n="terms.uptime.item3">We are not liable for downtime caused by factors beyond our control (internet issues, hosting provider outages, etc.).</li>
+            </ul>
 
-            <h2>Governing law</h2>
-            <p>These Terms are governed by the laws of the Province of Quebec and the laws of Canada applicable therein, without regard to conflict of law principles.</p>
+            <h2 data-i18n="terms.thirdPartyServices.title">Third-party services</h2>
+            <p data-i18n="terms.thirdPartyServices.desc">Our site and Services may integrate third-party services (e.g., Cal.com for scheduling, Google Analytics, Facebook APIs). Their respective terms and privacy policies govern your use of those services.</p>
 
-            <h2>Contact</h2>
-            <p>For questions about these Terms, contact <a href="mailto:contact@lsvautocloud.com">contact@lsvautocloud.com</a>.</p>
+            <h2 data-i18n="terms.support.title">Support and maintenance</h2>
+            <ul>
+                <li data-i18n="terms.support.item1">Support is provided via email during business hours (Monday-Friday, 9 AM - 5 PM EST).</li>
+                <li data-i18n="terms.support.item2">We will maintain and update the platform to ensure security and compatibility.</li>
+                <li data-i18n="terms.support.item3">Major feature updates and improvements are provided at our discretion.</li>
+            </ul>
+
+            <h2 data-i18n="terms.disclaimers.title">Disclaimers</h2>
+            <p data-i18n="terms.disclaimers.desc">The Services are provided "as is" without warranties of any kind. To the fullest extent permitted by law, we disclaim all implied warranties, including merchantability, fitness for a particular purpose, and non-infringement. We do not guarantee that the Services will meet your specific business requirements or generate any particular level of sales or leads.</p>
+
+            <h2 data-i18n="terms.liability.title">Limitation of liability</h2>
+            <p data-i18n="terms.liability.desc">To the extent permitted by law, LSV Auto Cloud will not be liable for indirect, incidental, special, consequential, or punitive damages, including but not limited to lost profits, lost revenue, loss of data, or loss of business opportunities, arising from your use of the Services. Our total liability for any claim arising from the Services will not exceed the total amount you paid to LSV Auto Cloud in the twelve (12) months preceding the claim, or one thousand CAD (CAD $1,000), whichever is less.</p>
+
+            <h2 data-i18n="terms.indemnity.title">Indemnity</h2>
+            <p data-i18n="terms.indemnity.desc">You agree to indemnify, defend, and hold LSV Auto Cloud, its officers, directors, employees, and agents harmless from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising out of: (a) your use or misuse of the Services, (b) your violation of these Terms, (c) your violation of any third-party rights, including intellectual property rights, (d) content you provide or publish through the Services.</p>
+
+            <h2 data-i18n="terms.termination.title">Termination</h2>
+            <ul>
+                <li data-i18n="terms.termination.item1">We may suspend or terminate your access to the Services if you violate these Terms, fail to pay fees, or for security or legal reasons.</li>
+                <li data-i18n="terms.termination.item2">Upon termination, you must pay all outstanding fees and will lose access to the platform.</li>
+                <li data-i18n="terms.termination.item3">Provisions regarding intellectual property, disclaimers, limitation of liability, and indemnification survive termination.</li>
+            </ul>
+
+            <h2 data-i18n="terms.changes.title">Changes to terms</h2>
+            <p data-i18n="terms.changes.desc">We may update these Terms from time to time to reflect changes in our Services or legal requirements. The "Last updated" date reflects the most recent changes. We will notify you of material changes via email or platform notification. Continued use of the Services after changes take effect constitutes acceptance of the updated Terms.</p>
+
+            <h2 data-i18n="terms.dispute.title">Dispute resolution</h2>
+            <ul>
+                <li data-i18n="terms.dispute.item1">If a dispute arises, we encourage you to contact us first to resolve the matter informally.</li>
+                <li data-i18n="terms.dispute.item2">Any disputes that cannot be resolved informally shall be subject to binding arbitration under the rules of the Canadian Arbitration Association, conducted in Montreal, Quebec.</li>
+                <li data-i18n="terms.dispute.item3">You agree to arbitrate disputes on an individual basis and waive any right to participate in class actions.</li>
+            </ul>
+
+            <h2 data-i18n="terms.law.title">Governing law</h2>
+            <p data-i18n="terms.law.desc">These Terms are governed by the laws of the Province of Quebec and the laws of Canada applicable therein, without regard to conflict of law principles. Any legal action must be brought in the courts located in Montreal, Quebec.</p>
+
+            <h2 data-i18n="terms.agreement.title">Entire agreement</h2>
+            <p data-i18n="terms.agreement.desc">These Terms constitute the entire agreement between you and LSV Auto Cloud regarding the Services and supersede any prior agreements or understandings, whether written or oral.</p>
+
+            <h2 data-i18n="terms.severability.title">Severability</h2>
+            <p data-i18n="terms.severability.desc">If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary, and the remaining provisions will remain in full force and effect.</p>
+
+            <h2 data-i18n="terms.contact.title">Contact</h2>
+            <p data-i18n="terms.contact.desc">For questions about these Terms, contact <a href="mailto:support@lsvautocloud.com">support@lsvautocloud.com</a>.</p>
         </main>
     </div>
 </body>
