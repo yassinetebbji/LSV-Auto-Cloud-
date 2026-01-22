@@ -4,8 +4,13 @@ const path = require('path');
 const baseUrl = 'https://www.lsvautocloud.com';
 const pages = [
     { file: 'index.html', loc: `${baseUrl}/`, changefreq: 'weekly', priority: '1.0' },
-    { file: 'privacy.html', loc: `${baseUrl}/privacy.html`, changefreq: 'yearly', priority: '0.6' },
-    { file: 'terms.html', loc: `${baseUrl}/terms.html`, changefreq: 'yearly', priority: '0.6' }
+    { file: 'dealership-website-builder.html', loc: `${baseUrl}/dealership-website-builder`, changefreq: 'monthly', priority: '0.8' },
+    { file: 'car-dealership-website-builder.html', loc: `${baseUrl}/car-dealership-website-builder`, changefreq: 'monthly', priority: '0.8' },
+    { file: 'crm-dealership-website.html', loc: `${baseUrl}/crm-dealership-website`, changefreq: 'monthly', priority: '0.8' },
+    { file: 'website-builder-crm.html', loc: `${baseUrl}/website-builder-crm`, changefreq: 'monthly', priority: '0.8' },
+    { file: 'crm-dealership.html', loc: `${baseUrl}/crm-dealership`, changefreq: 'monthly', priority: '0.8' },
+    { file: 'privacy.html', loc: `${baseUrl}/privacy`, changefreq: 'yearly', priority: '0.4' },
+    { file: 'terms.html', loc: `${baseUrl}/terms`, changefreq: 'yearly', priority: '0.4' }
 ];
 
 const formatDate = (date) => date.toISOString().slice(0, 10);

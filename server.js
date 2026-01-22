@@ -16,6 +16,11 @@ const serveStaticPage = (fileName) => (req, res) => {
 
 app.get(['/privacy', '/privacy.html'], serveStaticPage('privacy.html'));
 app.get(['/terms', '/terms.html'], serveStaticPage('terms.html'));
+app.get(['/dealership-website-builder', '/dealership-website-builder.html'], serveStaticPage('dealership-website-builder.html'));
+app.get(['/car-dealership-website-builder', '/car-dealership-website-builder.html'], serveStaticPage('car-dealership-website-builder.html'));
+app.get(['/crm-dealership-website', '/crm-dealership-website.html'], serveStaticPage('crm-dealership-website.html'));
+app.get(['/website-builder-crm', '/website-builder-crm.html'], serveStaticPage('website-builder-crm.html'));
+app.get(['/crm-dealership', '/crm-dealership.html'], serveStaticPage('crm-dealership.html'));
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
